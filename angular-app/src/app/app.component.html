@@ -1,0 +1,77 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+  rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<div class="main-wrapper">
+  <div class="pos-f-t">
+    <div class="collapse" id="navbarToggleExternalContent">
+
+      <div class="bg-dark p-4">
+        <h4 class="text-white">Collapsed content</h4>
+        <span class="text-muted">Toggleable via the navbar brand.</span>
+      </div>
+    </div>
+    <nav class="navbar navbar-dark bg-dark">
+      <div>
+        <button class="navbar-toggler" type="button" (click)="drawer.toggle()"
+          data-toggle="collapse" data-target="#navbarToggleExternalContent"
+          aria-controls="navbarToggleExternalContent" aria-expanded="false"
+          aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()">
+            <mat-icon aria-label="Side nav toggle icon">apps</mat-icon>
+      </button> -->
+        <div class="navbar-text white-icon margin-left">Just News</div>
+      </div>
+
+      <button class="btn btn-default btn-circle" type="button"
+        (click)="drawer.toggle()">
+        <mat-icon class="white-icon">person</mat-icon>
+      </button>
+    </nav>
+    <mat-sidenav-container class="navigation z-index-8">
+      <mat-sidenav #drawer class="sidenav" fixedInViewport="false"
+        [opened]="false">
+        <mat-nav-list>
+          <div class="sidenav">
+            <div>
+              <span class="small-cap">
+                <mat-icon>category</mat-icon>
+                Categories</span>
+            </div>
+            <mat-list-item (click)="drawer.toggle()">
+              <span>Top Stories</span>
+            </mat-list-item>
+            <mat-list-item (click)="drawer.toggle()">
+              <span>World</span>
+            </mat-list-item>
+            <mat-list-item (click)="drawer.toggle()">
+              <span>Local</span>
+            </mat-list-item>
+            <mat-list-item (click)="drawer.toggle()">
+              <span>Personal</span>
+            </mat-list-item>
+            <mat-list-item (click)="drawer.toggle()">
+              <span>Technology</span>
+            </mat-list-item>
+            <mat-list-item (click)="drawer.toggle()">
+              <button type="button" class="btn btn-outline-primary
+                waves-effect">Add Category</button>
+
+            </mat-list-item>
+          </div>
+          <div><span class="small-cap">
+              <mat-icon matListIcon>settings</mat-icon>
+              Settings</span></div>
+          <mat-list-item (click)="drawer.toggle()">
+            Mask Sources
+          </mat-list-item>
+        </mat-nav-list>
+      </mat-sidenav>
+      <mat-sidenav-content>
+        <router-outlet></router-outlet>
+      </mat-sidenav-content>
+
+    </mat-sidenav-container>
+
+  </div>

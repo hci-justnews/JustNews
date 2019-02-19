@@ -1,0 +1,12 @@
+<link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.1/css/mdb.min.css"
+  />
+<div class="homepage-container">
+  <div fxLayout="column" fxLayoutAlign="space-evenly center" fxLayoutGap="10px">
+    <search-card></search-card>
+    <div class="news-card" *ngFor="let article of articles">
+        <news-card [article]="article"></news-card>
+      </div>
+  </div>
+  
+</div>
