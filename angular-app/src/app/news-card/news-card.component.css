@@ -1,3 +1,18 @@
 .news-card {
     width: 40vw;
+  margin: 20px;
+}
+
+.sub-info{
+  margin-right: 10px;
+  margin-bottom: 10px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.news-image {
+  max-height: 400px;
+  object-fit: cover;
 }
