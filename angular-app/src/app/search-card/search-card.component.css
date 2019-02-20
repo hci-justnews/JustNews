@@ -1,0 +1,39 @@
+#searchBar {
+  height: 42px;
+  background: #f3f3f3;
+  border-radius: 21px;
+}
+
+#searchBar:hover {
+  background: #e5e5e5;
+}
+
+input{
+  margin-left: 15px;
+  margin-right: 15px;
+  outline: none;
+  border-color: transparent;
+  background: transparent;
+  border: 0;
+  border-bottom-color: transparent;
+  box-shadow: transparent;
+}
+
+button{
+  border-top-right-radius: 21px;
+  border-bottom-right-radius: 21px;
+  margin: 0;
+  height: 42px;
+}
+
+
+form{
+  padding: 0;
+  border: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  height: 42px;
+}
