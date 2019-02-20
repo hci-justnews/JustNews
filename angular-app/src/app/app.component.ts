@@ -44,4 +44,8 @@ export class AppComponent {
     this.router.navigate(['/', 'newspage'], { queryParams: { id: 4 } })
     this.drawer.toggle();
   }
+  goToHomepage() {
+    this.router.navigate(['/','home']);
+    this.drawer.toggle();
+  }
 }

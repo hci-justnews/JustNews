@@ -7,13 +7,14 @@
 
   <!-- Card content -->
   <div class="card-body">
-
+    <span class="badge badge-pill badge-primary">{{article.source}}</span>
     <!-- Title -->
     <h4 class="card-title"><a>{{article.title}}</a></h4>
     <!-- Text -->
     <p class="card-text">{{article.description}}</p>
     <!-- Button -->
-    <p class="card-text"><small class="text-muted">Published: {{getTimeString()}}</small></p>
+    <p class="card-text"><small class="text-muted">Published:
+        {{getTimeString()}}</small></p>
 
 
   </div>
