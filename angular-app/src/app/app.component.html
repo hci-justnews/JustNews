@@ -39,19 +39,20 @@
                 <mat-icon>category</mat-icon>
                 Categories</span>
             </div>
-            <mat-list-item (click)="drawer.toggle()">
+            <mat-list-item
+              (click)="getTopStories()">
               <span>Top Stories</span>
             </mat-list-item>
-            <mat-list-item (click)="drawer.toggle()">
+            <!-- <mat-list-item (click)="getWorldStories()">
               <span>World</span>
+            </mat-list-item> -->
+            <mat-list-item (click)="getTopStories()">
+              <span>USA</span>
             </mat-list-item>
-            <mat-list-item (click)="drawer.toggle()">
-              <span>Local</span>
+            <mat-list-item (click)="getChicagoStories()">
+              <span>Chicago</span>
             </mat-list-item>
-            <mat-list-item (click)="drawer.toggle()">
-              <span>Personal</span>
-            </mat-list-item>
-            <mat-list-item (click)="drawer.toggle()">
+            <mat-list-item (click)="getTechStories()">
               <span>Technology</span>
             </mat-list-item>
             <mat-list-item (click)="drawer.toggle()">
