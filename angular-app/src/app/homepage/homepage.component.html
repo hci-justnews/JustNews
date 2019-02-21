@@ -1,12 +1,36 @@
-<link rel="stylesheet"
+<!-- <link rel="stylesheet"
   href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.1/css/mdb.min.css"
-  />
-<div class="homepage-container">
-  <div fxLayout="column" fxLayoutAlign="space-evenly center" fxLayoutGap="10px">
-    <search-card></search-card>
-    <!-- <div class="news-card" *ngFor="let article of articles">
-        <news-card [article]="article"></news-card>
-      </div> -->
-  </div>
-  
+  /> -->
+<link href="https://fonts.googleapis.com/css?family=Poppins:400,800"
+  rel="stylesheet" />
+
+<!-- <div class="bg">
+  <div id="searchBar" class="centered" size="90">
+      <form>
+        <input id="search-bar-input" type="text" size="1" autocomplete="off" placeholder="Search for Topics">
+        <button class="btn btn-elegant btn-rounded btn-sm my-0" size="4" type="submit"><i class="material-icons">search</i></button>
+      </form>
+    </div>
+</div> -->
+
+<div class="s006">
+  <form id="searchform">
+    <fieldset>
+      <legend>Just News</legend>
+      <div class="inner-form">
+        <div class="input-field">
+          <button class="btn-search" type="button" (click)="searchQuery()">
+            <mat-icon>search</mat-icon>
+          </button>
+          <input id="search" name="search" type="text" placeholder="" value="Evanston"/>
+        </div>
+      </div>
+      <div class="suggestion-wrap">
+        <span class="badge badge-pill badge-primary sub-info clickable" (click)="searchTop()">Top Headlines</span>
+        <span class="badge badge-pill badge-primary sub-info clickable" (click)="searchWorld()">World News</span>
+        <span class="badge badge-pill badge-primary sub-info clickable" (click)="searchChicago()">Chicago</span>
+        <span class="badge badge-pill badge-primary sub-info clickable" (click)="searchZion()">Zion Williamson</span>
+      </div>
+    </fieldset>
+  </form>
 </div>

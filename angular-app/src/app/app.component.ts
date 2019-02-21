@@ -1,6 +1,9 @@
 import { Component, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { MatDrawer } from '@angular/material';
+import { Observable } from 'rxjs/internal/Observable';
+import { map, take } from 'rxjs/operators';
+import { NewsApiService } from './services/newsapi-service';
 declare var jquery: any;
 declare var $: any;
 @Component({
@@ -11,17 +14,13 @@ declare var $: any;
 export class AppComponent {
   title = 'JustNews';
   @ViewChild('drawer') drawer: MatDrawer;
-  constructor(private router: Router, ) {
-
+  show: boolean = false;               // {1}
+  constructor(private router: Router, private newsapi: NewsApiService) {
   }
-  async ngOnInit() {
-    //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
-    //Add 'implements OnInit' to the class.
-    try {
-      this.router.navigate(['/', 'home']);
-    } catch (err) {
-      alert(err);
-    }
+
+  ngOnInit() {
+    this.newsapi.showNavbar.subscribe((value) => this.show = value)
+    this.goToLandingPage();
   }
 
   getTopStories() {
@@ -44,8 +43,13 @@ export class AppComponent {
     this.router.navigate(['/', 'newspage'], { queryParams: { id: 4 } })
     this.drawer.toggle();
   }
-  goToHomepage() {
-    this.router.navigate(['/','home']);
-    this.drawer.toggle();
+  goToLandingPage() {
+    if (this.drawer.opened){
+      this.drawer.toggle();
+    }
+    this.newsapi.hideHeader();
+    this.router.navigate(['/', 'home']);
   }
+
+
 }

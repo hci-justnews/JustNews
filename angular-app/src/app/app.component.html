@@ -1,16 +1,13 @@
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
   rel="stylesheet">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <div class="main-wrapper">
   <div class="pos-f-t">
-    <div class="collapse" id="navbarToggleExternalContent">
-
-      <div class="bg-dark p-4">
-        <h4 class="text-white">Collapsed content</h4>
-        <span class="text-muted">Toggleable via the navbar brand.</span>
-      </div>
-    </div>
-    <nav class="navbar navbar-dark bg-dark">
+    <!-- <div class="collapse" id="navbarToggleExternalContent">
+    </div> -->
+    <nav id="navbar" class="navbar navbar-dark bg-dark" *ngIf="show">
       <div>
         <button class="navbar-toggler" type="button" (click)="drawer.toggle()"
           data-toggle="collapse" data-target="#navbarToggleExternalContent"
@@ -21,7 +18,8 @@
         <!-- <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()">
             <mat-icon aria-label="Side nav toggle icon">apps</mat-icon>
       </button> -->
-        <div class="navbar-text white-icon margin-left">Just News</div>
+        <div class="navbar-text white-icon margin-left clickable"
+          (click)="goToLandingPage()">Just News</div>
       </div>
 
       <button class="btn btn-default btn-circle" type="button"
@@ -34,9 +32,7 @@
         [opened]="false">
         <mat-nav-list>
           <div class="sidenav">
-            <mat-list-item (click)="goToHomepage()">
-              <span>Home</span>
-            </mat-list-item>
+            
             <div>
               <span class="small-cap">
                 <mat-icon>category</mat-icon>
@@ -49,9 +45,9 @@
             <!-- <mat-list-item (click)="getWorldStories()">
               <span>World</span>
             </mat-list-item> -->
-            <mat-list-item (click)="getTopStories()">
+            <!-- <mat-list-item (click)="getTopStories()">
               <span>USA</span>
-            </mat-list-item>
+            </mat-list-item> -->
             <mat-list-item (click)="getChicagoStories()">
               <span>Chicago</span>
             </mat-list-item>
@@ -75,7 +71,6 @@
       <mat-sidenav-content>
         <router-outlet></router-outlet>
       </mat-sidenav-content>
-
     </mat-sidenav-container>
 
   </div>

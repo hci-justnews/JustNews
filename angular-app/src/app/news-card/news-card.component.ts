@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Article } from '../newspage/newspage.component';
+import { NewsApiService } from '../services/newsapi-service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'news-card',
@@ -9,7 +11,7 @@ import { Article } from '../newspage/newspage.component';
 export class NewsCardComponent implements OnInit {
   @Input() article: Article;
 
-  constructor() { }
+  constructor(private newsapi: NewsApiService, private router:Router) { }
 
   ngOnInit() {
   }
@@ -29,5 +31,12 @@ export class NewsCardComponent implements OnInit {
       hour = hour % 12;
     }
     return hour + ":" + minString + tod + " " + (this.article.publishedAt.getMonth() + 1) + "/" + this.article.publishedAt.getDate() + "/" + this.article.publishedAt.getFullYear();
+  }
+  searchNews() {
+    var search = document.getElementById("search").nodeValue;
+    this.newsapi.showHeader();
+    this.router.navigate(['/', 'newspage'], { queryParams: {search:search } })
+
+    // console.log(this.news)
   }
 }

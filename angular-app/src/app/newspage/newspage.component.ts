@@ -23,6 +23,7 @@ export class NewspageComponent implements OnInit {
   data: any;
   articles: Article[] = [];
   query: number = 0;
+  search: string = "";
   constructor(private news: NewsApiService, private _route: ActivatedRoute) {
     this.newsapi = news;
     this._route
@@ -30,10 +31,11 @@ export class NewspageComponent implements OnInit {
       .subscribe(params => {
         console.log(params)
         this.query = params['id'] || 0;
-        this.getQuery(params['id']);
+        this.search = params['search'];
+        this.getQuery(params['id'], params['search']);
       });
   }
-  async getQuery(id: any) {
+  async getQuery(id: any, search: any) {
     switch (id) {
       case "0": //TOP NEWS IN US
         this.newsapi.getHeadlinesInUS().subscribe(response => {
@@ -62,7 +64,11 @@ export class NewspageComponent implements OnInit {
         });
         break;
       default:
-        console.log("INVALID QUERY")
+        console.log("SEARCH QUERY")
+        this.newsapi.getArticleByQuery(search).subscribe(response => {
+          this.data = response["articles"];
+          this.getArticles();
+        });
         break;
 
     }
