@@ -13,6 +13,7 @@ import { Observable } from 'rxjs';
 export class NavbarComponent implements OnInit {
   @Input() drawer: MatDrawer;
   @Input() show: boolean;
+  public image: string = "assets/jessie.jpg";
   // public user: User;
   constructor(private newsapi: NewsApiService, private router: Router, private users: UserService) {
 
