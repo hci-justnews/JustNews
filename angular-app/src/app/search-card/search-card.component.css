@@ -2,14 +2,14 @@
   height: 42px;
   background: #f3f3f3;
   border-radius: 21px;
-  margin-top: 10px;
+  margin-top: 30px;
 }
 
 #searchBar:hover {
   background: #e5e5e5;
 }
 
-input{
+input {
   margin-left: 15px;
   margin-right: 15px;
   outline: none;
@@ -20,15 +20,14 @@ input{
   box-shadow: transparent;
 }
 
-button{
+button {
   border-top-right-radius: 21px;
   border-bottom-right-radius: 21px;
   margin: 0;
   height: 42px;
 }
 
-
-form{
+form {
   padding: 0;
   border: 0;
   margin: 0;
