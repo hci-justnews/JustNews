@@ -1,10 +1,3 @@
-/* body, html {
-    background: url("stock2.jpg") no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-} */
 
 
 
@@ -26,7 +19,9 @@ html, body {
 .border-padding {
     border-bottom: 1px solid rgba(0, 0, 0, 0.12);
 }
-
+.spacer{
+    width: 300px;
+}
 .spacer-one {
     flex: 1 1 auto;
 }
@@ -94,7 +89,7 @@ html, body {
 mat-sidenav-content{
     width: 100%;
     min-height: calc(100vh - 122px);
-    padding: 0px;
+    padding-left: 0px;
 }
 mat-sidenav-content > * {
     width: 100%;

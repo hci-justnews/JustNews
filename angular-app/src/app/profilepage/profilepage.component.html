@@ -1,0 +1,79 @@
+<link
+  href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.3/css/mdb.min.css"
+  rel="stylesheet">
+<link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/plottable@3.7.0/plottable.css">
+<div class="profile-wrapper">
+  <div class="row d-flex justify-content-center">
+
+    <div class="col-6 align-center">
+      <div class="row d-flex justify-content-center w-100">
+        <div class="card">
+          <div class="card-content">
+            <div class="center-align m-t-30">
+              <img [src]="image" class="rounded-circle t" width="300">
+              <h4 class="card-title m-t-10 text-center">{{name}}</h4>
+              <h6 class="card-subtitle text-center">Age: {{age}}</h6>
+            </div>
+          </div>
+        </div>
+      </div>
+      <span class="spacer">
+
+      </span>
+      <div class="row d-flex justify-content-center">
+        <div class="d-inline-flex p-2">
+          <div class="d-col achievement" align="center">
+            <img src="assets/reader.png" width="100px" height="100px">
+            <h4 class="card-title m-t-10 text-center">Speed Reader</h4>
+          </div>
+        </div>
+        <div class="d-inline-flex p-2">
+          <div class="d-col achievement" align="center">
+            <img src="assets/bullseye.png" width="100px" height="100px">
+            <h4 class="card-title m-t-10 text-center">Source Detective</h4>
+          </div>
+        </div>
+        <div class="d-inline-flex p-2">
+          <div class="d-col achievement" align="center">
+            <img src="assets/leader.png" width="100px" height="100px">
+            <h4 class="card-title m-t-10 text-center">Fact Hero</h4>
+          </div>
+        </div>
+
+      </div>
+      <div class="d-flex justify-content-center">
+        <div class="d-inline-flex p-2">
+          <div class="d-col achievement" align="center">
+            <img src="assets/torch.png" width="100px" height="100px">
+            <h4 class="card-title m-t-10 text-center">Bias Expert</h4>
+          </div>
+        </div>
+        <div class="d-inline-flex p-2">
+          <div class="d-col achievement" align="center">
+            <img src="assets/time.png" width="100px" height="100px">
+            <h4 class="card-title m-t-10 text-center">Daily User</h4>
+          </div>
+        </div>
+      </div>
+
+      <div class="hline"></div>
+
+      <div class="row" style="background: lightgreen">
+        <div class="col-8 align-items-center">
+          CHART
+        </div>
+      </div>
+      <div class="hline"></div>
+
+      <div class="d-flex justify-content-center">
+        <app-leaderboard></app-leaderboard>
+      </div>
+    </div>
+
+
+  </div>
+
+
+</div>
+
