@@ -106,11 +106,3 @@ mat-sidenav-content > app-cms-dashboard > *{
 .profile-wrapper > * {
     padding: 10px 10px 10px 10px;
 }
-
-.app-title {
-  font-weight: 700;
-}
-
-.app-title:hover {
-  color: #2e7ef6!important;
-}
