@@ -25,6 +25,13 @@ export class NavbarComponent implements OnInit {
     this.router.navigate(['/', 'profile'])
 
   }
- 
+  goToLandingPage() {
+    if (this.drawer.opened) {
+      console.log("TOGGLING")
+      this.drawer.toggle();
+    }
+    // this.newsapi.hideHeader();
+    this.router.navigate(['/', 'home']);
+  }
 
 }
