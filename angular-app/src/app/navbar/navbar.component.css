@@ -1,3 +1,16 @@
 .navbar {
     background: linear-gradient(to bottom, #3a404d, #181c26);
 }
+
+.app-title {
+  color: white;
+  font-weight: 700;
+}
+
+.app-title:hover {
+  color: #2e7ef6!important;
+}
+
+.profile-button:hover {
+  background-color: #2e7ef6!important;
+}
