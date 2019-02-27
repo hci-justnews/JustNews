@@ -15,3 +15,8 @@
 .profile-button:hover {
   background-color: #2e7ef6!important;
 }
+
+.profile-button{
+    background:url("../../assets/jessie.jpg");
+    background-size: contain;
+}

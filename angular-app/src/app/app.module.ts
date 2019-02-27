@@ -17,8 +17,10 @@ import * as $ from 'jquery';
 import { HttpClientModule } from '@angular/common/http';
 import { AvatarModule } from 'ngx-avatar';
 import { NavbarComponent } from './navbar/navbar.component';
-import 'chart.js';
 import { LeaderboardComponent } from './leaderboard/leaderboard.component';
+import { ChartistModule } from 'ng-chartist';
+import { ChartComponent } from './chart/chart.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,8 +29,10 @@ import { LeaderboardComponent } from './leaderboard/leaderboard.component';
     NewsCardComponent,
     NavbarComponent,
     LeaderboardComponent,
+    ChartComponent,
   ],
   imports: [
+    ChartistModule,
     BrowserModule,
     HttpClientModule,
     FlexLayoutModule,

@@ -13,6 +13,7 @@ import { Observable } from 'rxjs';
 export class NavbarComponent implements OnInit {
   @Input() drawer: MatDrawer;
   @Input() show: boolean;
+  public image: string = "assets/jessie.jpg";
   // public user: User;
   constructor(private newsapi: NewsApiService, private router: Router, private users: UserService) {
 
@@ -25,6 +26,13 @@ export class NavbarComponent implements OnInit {
     this.router.navigate(['/', 'profile'])
 
   }
- 
+  goToLandingPage() {
+    if (this.drawer.opened) {
+      console.log("TOGGLING")
+      this.drawer.toggle();
+    }
+    // this.newsapi.hideHeader();
+    this.router.navigate(['/', 'home']);
+  }
 
 }

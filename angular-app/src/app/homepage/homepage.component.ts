@@ -17,7 +17,6 @@ export class HomepageComponent implements OnInit {
   }
   ngOnInit(): void {
     this.newsapi.hideHeader()
-    this.newsapi.toggleD();
     var that = this;
     $('#searchform').on('keypress', function (e) {
       var keyCode = e.keyCode || e.which;
