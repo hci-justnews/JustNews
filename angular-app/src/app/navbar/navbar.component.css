@@ -9,6 +9,7 @@
 
 .app-title:hover {
   color: #2e7ef6!important;
+  cursor: pointer;
 }
 
 .profile-button:hover {

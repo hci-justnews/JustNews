@@ -32,3 +32,8 @@
     width: 150px;
 }
 
+.profile-name {
+  font-weight: bold;
+  margin-top: 20px;
+
+}
