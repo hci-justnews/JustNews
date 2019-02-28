@@ -1,14 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {
   ILineChartOptions,
   IChartistAnimationOptions,
-  IChartistData
+  IChartistData, IResponsiveOptionTuple
 } from 'chartist';
-import { ChartEvent, ChartType } from 'ng-chartist';
+import {ChartEvent, ChartType, ResponsiveOptions} from 'ng-chartist';
+
 @Component({
   selector: 'chart',
   template: `
-  <x-chartist
+    <x-chartist
       [type]="type"
       [data]="data"
       [options]="options"
@@ -17,31 +18,33 @@ import { ChartEvent, ChartType } from 'ng-chartist';
   styleUrls: ['./chart.component.css']
 })
 export class ChartComponent implements OnInit {
-  type: ChartType = 'Line';
+
+  type: ChartType = 'Bar';
   data: IChartistData = {
     labels: [
-      'Sunday',
-      'Monday',
-      'Tuesday',
-      'Wednesday',
-      'Thursday',
-      'Friday',
-      'Saturday',
+      'Mo',
+      'Tu',
+      'We',
+      'Th',
+      'Fr',
+      'Sa',
+      'Su',
     ],
     series: [
-      [5, 4, 3, 7, 5, 10, 3],
-      [3, 2, 9, 5, 4, 6, 4]
-    ]
+      [{value: 40, className: 'high'}, {value: 7.8, className: 'high'}, {value: -9, className: 'low'},
+        {value: -27, className: 'low'}, {value: -25, className: 'low'}, {value: 67, className: 'high'}
+        , {value: 75, className: 'high'}]
+    ],
   };
-
   options: ILineChartOptions = {
+
     axisX: {
-      showGrid: false
+      showGrid: false,
     },
     height: 300,
-    width: 500,
-    showArea: true
-    
+    width: 480,
+    high: 100,
+    low: -100,
   };
 
   events: ChartEvent = {
@@ -58,7 +61,9 @@ export class ChartComponent implements OnInit {
       }
     }
   };
-  constructor() { }
+
+  constructor() {
+  }
 
   ngOnInit() {
   }

@@ -1,0 +1,11 @@
+.ct-bar {
+  fill: yellow;
+}
+
+.ct-series-a .ct-bar, .ct-series-a .ct-line, .ct-series-a .ct-point, .ct-series-a .ct-slice-donut {
+  stroke: green;
+}
+
+.ct-series-a .ct-area, .ct-series-a .ct-slice-donut-solid, .ct-series-a .ct-slice-pie {
+  fill: #00bcd4;
+}
