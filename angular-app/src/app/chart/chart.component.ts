@@ -41,8 +41,8 @@ export class ChartComponent implements OnInit {
     axisX: {
       showGrid: false,
     },
-    height: 300,
-    width: 480,
+    height: "300px",
+    width: "100%",
     high: 100,
     low: -100,
   };
