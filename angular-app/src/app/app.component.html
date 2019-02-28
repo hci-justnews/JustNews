@@ -28,7 +28,7 @@
                 Categories</span>
             </div>
             <mat-list-item>
-              <button type="button" class="btn btn-primary"
+              <button type="button" class="btn btn-primary w-100"
                 (click)="getTopStories()">Top Stories</button>
             </mat-list-item>
             <!-- <mat-list-item (click)="getWorldStories()">
@@ -61,13 +61,15 @@
             </div>
           </mat-list-item>
 
-          <div><span class="small-cap">
+          <!-- <div>
+            <span class="small-cap">
               <mat-icon matListIcon>people</mat-icon>
-              Users</span></div>
+              Users</span>
+          </div>
           <mat-list-item *ngFor="let user of users.Users; let i=index">
             <button type="button" class="w-100 btn btn-outline-primary
               waves-effect" (click)="selectUser(i)">{{user.Name}}</button>
-          </mat-list-item>
+          </mat-list-item> -->
         </mat-nav-list>
       </mat-sidenav>
       <mat-sidenav-content>
@@ -78,5 +80,5 @@
   </div>
 
   <div class="spacer">
-s
+    s
   </div>

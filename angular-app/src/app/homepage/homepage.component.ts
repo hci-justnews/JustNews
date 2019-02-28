@@ -16,7 +16,8 @@ export class HomepageComponent implements OnInit {
   constructor(private newsapi: NewsApiService, private router: Router) {
   }
   ngOnInit(): void {
-    this.newsapi.hideHeader()
+    this.newsapi.hideHeader();
+    this.newsapi.closeDrawer();
     var that = this;
     $('#searchform').on('keypress', function (e) {
       var keyCode = e.keyCode || e.which;
@@ -32,19 +33,22 @@ export class HomepageComponent implements OnInit {
 
   }
   searchQuery() {
-    this.newsapi.toggleD();
+    this.newsapi.openDrawer();
     this.newsapi.showHeader();
     this.router.navigate(['/', 'newspage'], { queryParams: { search: this.search } })
   }
   searchZion() {
+    this.newsapi.openDrawer();
     this.newsapi.showHeader();
     this.router.navigate(['/', 'newspage'], { queryParams: { search: "Zion Williamson" } })
   }
   searchWorld() {
+    this.newsapi.openDrawer();
     this.newsapi.showHeader();
     this.router.navigate(['/', 'newspage'], { queryParams: { search: "World" } })
   }
   searchTop() {
+    this.newsapi.openDrawer();
     this.newsapi.showHeader();
     this.router.navigate(['/', 'newspage'], { queryParams: { id: 0 } });
 

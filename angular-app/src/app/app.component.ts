@@ -27,11 +27,11 @@ export class AppComponent {
   }
 
   ngOnInit() {
-    this.newsapi.toggleDrawer.subscribe((value) => this.drawer.toggle())
+    this.newsapi.showDrawer.subscribe((value) => {if(this.drawer.opened != value){this.drawer.toggle();}})
     this.newsapi.showNavbar.subscribe((value) => { this.show = value; })
 
-    // this.goToLandingPage();
-    this.goToProfile()
+    this.goToLandingPage();
+    // this.goToProfile()
     // this.users.loadUsers();
   }
 
