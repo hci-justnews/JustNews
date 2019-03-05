@@ -8,7 +8,6 @@ const routes: Routes = [
   { path: 'home', component: HomepageComponent },
   { path: 'newspage', component: NewspageComponent },
   { path: 'profile', component: ProfilepageComponent }
-];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
@@ -16,3 +15,4 @@ const routes: Routes = [
 })
 export class AppRoutingModule { }
 export const routingComponents = [HomepageComponent, NewspageComponent, ProfilepageComponent]
+

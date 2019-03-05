@@ -8,6 +8,7 @@ import {
   MatSidenavModule, MatMenuModule, MatToolbarModule, MatGridListModule, MatSlideToggleModule,
   MatCardModule, MatExpansionModule, MatIconModule, MatListModule, MatButtonModule, MatChipsModule
 } from '@angular/material';
+
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { SearchCardComponent } from './search-card/search-card.component';
 import { NewsCardComponent } from './news-card/news-card.component';
@@ -40,6 +41,7 @@ import { ChartComponent } from './chart/chart.component';
     MatSidenavModule, MatSlideToggleModule, MatMenuModule, MatGridListModule,
     MatToolbarModule, MatCardModule, MatExpansionModule, MatIconModule, MatListModule,
     MatButtonModule, MatChipsModule,
+
     BrowserAnimationsModule
   ],
   providers: [NewsApiService, UserService],
