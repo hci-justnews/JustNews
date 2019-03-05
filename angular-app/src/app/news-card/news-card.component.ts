@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 export class NewsCardComponent implements OnInit {
   @Input() article: Article;
 
-  constructor(private newsapi: NewsApiService, private router:Router) { }
+  constructor(private newsapi: NewsApiService, private router: Router) { }
 
   ngOnInit() {
   }
@@ -20,7 +20,7 @@ export class NewsCardComponent implements OnInit {
     var hour = this.article.publishedAt.getHours();
     var tod = "AM"
     var minutes = this.article.publishedAt.getMinutes()
-    var minString = minutes.toString().padEnd(2,"0")
+    var minString = minutes.toString().padEnd(2, "0")
     if (hour > 12) {
       tod = "PM"
     }
@@ -35,8 +35,23 @@ export class NewsCardComponent implements OnInit {
   searchNews() {
     var search = document.getElementById("search").nodeValue;
     this.newsapi.showHeader();
-    this.router.navigate(['/', 'newspage'], { queryParams: {search:search } })
+    this.router.navigate(['/', 'newspage'], { queryParams: { search: search } })
 
     // console.log(this.news)
+  }
+  printContent() {
+    this.router.navigate(['/', 'article'], {
+      queryParams: {
+        author: this.article.author,
+        title: this.article.title,
+        description: this.article.description,
+        url: this.article.url,
+        image: this.article.image,
+        publishedAt: this.article.publishedAt,
+        content: this.article.content,
+        source: this.article.source
+      }
+    })
+
   }
 }

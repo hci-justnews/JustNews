@@ -25,23 +25,18 @@ export class AppComponent {
 
   getTopStories() {
     this.router.navigate(['/', 'newspage'], { queryParams: { id: 0 } })
-    this.drawer.toggle();
   }
   getWorldStories() {
     this.router.navigate(['/', 'newspage'], { queryParams: { id: 1 } })
-    this.drawer.toggle();
   }
   getCountryStories() {
     this.router.navigate(['/', 'newspage'], { queryParams: { id: 2 } })
-    this.drawer.toggle();
   }
   getChicagoStories() {
     this.router.navigate(['/', 'newspage'], { queryParams: { id: 3 } })
-    this.drawer.toggle();
   }
   getTechStories() {
     this.router.navigate(['/', 'newspage'], { queryParams: { id: 4 } })
-    this.drawer.toggle();
   }
   goToLandingPage() {
     if (this.drawer.opened){
@@ -51,5 +46,8 @@ export class AppComponent {
     this.router.navigate(['/', 'home']);
   }
 
+  addCategory() {
+    console.log("HEY")
+  }
 
 }

@@ -29,7 +29,7 @@
     </nav>
     <mat-sidenav-container class="navigation z-index-8">
       <mat-sidenav #drawer class="sidenav" fixedInViewport="false"
-        [opened]="false">
+        [opened]="show">
         <mat-nav-list>
           <div class="sidenav">
             
@@ -54,10 +54,9 @@
             <mat-list-item (click)="getTechStories()">
               <span>Technology</span>
             </mat-list-item>
-            <mat-list-item (click)="drawer.toggle()">
+            <mat-list-item (click)="addCategory()">
               <button type="button" class="btn btn-outline-primary
                 waves-effect">Add Category</button>
-
             </mat-list-item>
           </div>
           <div><span class="small-cap">
