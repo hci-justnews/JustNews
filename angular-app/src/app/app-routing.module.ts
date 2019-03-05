@@ -7,7 +7,7 @@ import { ProfilepageComponent } from './profilepage/profilepage.component';
 const routes: Routes = [
   { path: 'home', component: HomepageComponent },
   { path: 'newspage', component: NewspageComponent },
-  { path: 'profile', component: ProfilepageComponent }
+  { path: 'profile', component: ProfilepageComponent }]
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

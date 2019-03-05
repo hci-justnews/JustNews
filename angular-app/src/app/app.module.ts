@@ -6,8 +6,10 @@ import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {
   MatSidenavModule, MatMenuModule, MatToolbarModule, MatGridListModule, MatSlideToggleModule,
-  MatCardModule, MatExpansionModule, MatIconModule, MatListModule, MatButtonModule, MatChipsModule
+  MatCardModule, MatExpansionModule, MatIconModule, MatListModule, MatButtonModule, MatChipsModule,
+  MatFormFieldModule
 } from '@angular/material';
+import { FormsModule } from '@angular/forms';
 
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { SearchCardComponent } from './search-card/search-card.component';
@@ -34,10 +36,11 @@ import { ChartComponent } from './chart/chart.component';
   ],
   imports: [
     ChartistModule,
+    FormsModule,
     BrowserModule,
     HttpClientModule,
     FlexLayoutModule,
-    AppRoutingModule, AvatarModule,
+    AppRoutingModule, AvatarModule,MatFormFieldModule,
     MatSidenavModule, MatSlideToggleModule, MatMenuModule, MatGridListModule,
     MatToolbarModule, MatCardModule, MatExpansionModule, MatIconModule, MatListModule,
     MatButtonModule, MatChipsModule,

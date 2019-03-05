@@ -20,7 +20,7 @@ export class NewsApiService {
         this.showDrawer.next(false);
     }
     hideHeader() {
-        this.showNavbar.next(false);
+        this.showNavbar.next(true);
     }
     showHeader() {
         this.showNavbar.next(true);

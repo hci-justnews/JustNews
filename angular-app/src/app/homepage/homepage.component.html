@@ -1,9 +1,14 @@
 <!-- <link rel="stylesheet"
   href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.1/css/mdb.min.css"
   /> -->
-<link href="https://fonts.googleapis.com/css?family=Poppins:400,800"
-  rel="stylesheet" />
-
+<link
+  href="https://fonts.googleapis.com/css?family=Poppins:400,800"
+  rel="stylesheet"
+/>
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.1/css/mdb.min.css"
+/>
 <!-- <div class="bg">
   <div id="searchBar" class="centered" size="90">
       <form>
@@ -16,20 +21,42 @@
 <div class="s006">
   <form id="searchform">
     <fieldset>
-      <legend>J u s t  N e w s</legend>
+      <legend>J u s t N e w s</legend>
       <div class="inner-form">
         <div class="input-field">
           <button class="btn-search" type="button" (click)="searchQuery()">
             <mat-icon>search</mat-icon>
           </button>
-          <input id="search" name="search" type="text" placeholder="Search for Topic" value=""/>
+          <input
+            id="search"
+            name="search"
+            type="text"
+            placeholder="Search for Topic"
+            value=""
+          />
         </div>
       </div>
-      <div fxLayout="row" fxLayoutAlign="center center" >
-        <span class="badge badge-pill badge-primary landing-badge clickable" (click)="searchTop()">Top Headlines</span>
-        <span class="badge badge-pill badge-primary landing-badge clickable" (click)="searchWorld()">World News</span>
-        <span class="badge badge-pill badge-primary landing-badge clickable" (click)="searchChicago()">Chicago</span>
-        <span class="badge badge-pill badge-primary landing-badge clickable" (click)="searchZion()">Zion Williamson</span>
+      <div fxLayout="row" fxLayoutAlign="center center">
+        <span
+          class="badge badge-pill  landing-badge clickable"
+          (click)="searchTop()"
+          >Top Headlines</span
+        >
+        <span
+          class="badge badge-pill  landing-badge clickable"
+          (click)="searchWorld()"
+          >World News</span
+        >
+        <span
+          class="badge badge-pill  landing-badge clickable"
+          (click)="searchChicago()"
+          >Chicago</span
+        >
+        <span
+          class="badge badge-pill  landing-badge clickable"
+          (click)="searchZion()"
+          >Zion Williamson</span
+        >
       </div>
     </fieldset>
   </form>
