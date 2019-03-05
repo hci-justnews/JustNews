@@ -44,7 +44,7 @@ export class NewspageComponent implements OnInit {
         });
         break;
       case "1": //TOP NEWS IN WORLD
-        this.newsapi.getHeadlinesInWorld().subscribe(response => {
+        this.newsapi.getArticleByQuery("World News").subscribe(response => {
           this.data = response["articles"];
           this.getArticles()
         });

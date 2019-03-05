@@ -1,4 +1,4 @@
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
 <link
   href="https://fonts.googleapis.com/icon?family=Material+Icons"
   rel="stylesheet"
@@ -19,46 +19,59 @@
         class="sidenav"
         fixedInViewport="false"
         [opened]="true"
+        style="background: white"
       >
         <mat-nav-list>
           <div class="sidenav">
             <div>
               <span class="small-cap">
-                <mat-icon>category</mat-icon>
-                Categories</span
+                <mat-icon class="nav-headline">category</mat-icon>
+                <b>Categories</b></span
               >
             </div>
             <mat-list-item>
-              <button
-                type="button"
-                class="btn btn-primary w-100"
-                (click)="getTopStories()"
-              >
+              <button type="button" class="btn topic-button" (click)="getTopStories()">
                 Top Stories
               </button>
             </mat-list-item>
 
-            <mat-list-item (click)="addCategory()">
-              <button type="button" class="w-100 btn btn-outline-primary">
-                Add A Category
+            <mat-list-item>
+              <button type="button" class="btn topic-button" (click)="getWorldStories()">
+                World News
               </button>
+            </mat-list-item>
+
+            <mat-list-item>
+              <button type="button" class="btn topic-button" (click)="getChicagoStories()">
+                Chicago Politics
+              </button>
+            </mat-list-item>
+
+            <mat-list-item>
+              <button type="button" class="btn topic-button" (click)="getTechStories()">
+                Technology
+              </button>
+            </mat-list-item>
+
+            <mat-list-item (click)="addCategory()">
+              <button type="button" class="btn add-button" >Add Category</button>
             </mat-list-item>
           </div>
           <div>
             <span class="small-cap">
-              <mat-icon matListIcon>settings</mat-icon>
-              Settings</span
+              <mat-icon class="nav-headline" matListIcon>settings</mat-icon>
+              <b>Settings</b></span
             >
           </div>
           <mat-list-item>
-            <div class="custom-control custom-switch">
+            <div class="custom-control custom-switch"style="margin-left: 5px">
               <input
                 type="checkbox"
                 class="custom-control-input"
                 id="customSwitches"
               />
               <label class="custom-control-label" for="customSwitches"
-                >Mask Sources</label
+              >Mask Sources</label
               >
             </div>
           </mat-list-item>
@@ -80,7 +93,4 @@
     </mat-sidenav-container>
   </div>
 
-  <div class="spacer">
-    s
-  </div>
 </div>
