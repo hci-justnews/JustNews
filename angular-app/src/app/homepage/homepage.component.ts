@@ -37,15 +37,15 @@ export class HomepageComponent implements OnInit {
     this.newsapi.showHeader();
     this.router.navigate(['/', 'newspage'], { queryParams: { search: this.search } })
   }
-  searchZion() {
+  searchCarnival() {
     this.newsapi.openDrawer();
     this.newsapi.showHeader();
-    this.router.navigate(['/', 'newspage'], { queryParams: { search: "Zion Williamson" } })
+    this.router.navigate(['/', 'newspage'], { queryParams: { search: "Carnival" } })
   }
-  searchWorld() {
+  searchAlabama() {
     this.newsapi.openDrawer();
     this.newsapi.showHeader();
-    this.router.navigate(['/', 'newspage'], { queryParams: { search: "World" } })
+    this.router.navigate(['/', 'newspage'], { queryParams: { search: "Alabama Tornadoes" } })
   }
   searchTop() {
     this.newsapi.openDrawer();
@@ -53,9 +53,9 @@ export class HomepageComponent implements OnInit {
     this.router.navigate(['/', 'newspage'], { queryParams: { id: 0 } });
 
   }
-  searchChicago() {
+  searchBrexit() {
     this.newsapi.showHeader();
-    this.router.navigate(['/', 'newspage'], { queryParams: { id: 3 } })
+    this.router.navigate(['/', 'newspage'], { queryParams: { search: "Brexit" } })
   }
 
 }
