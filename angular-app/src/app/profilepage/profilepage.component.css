@@ -48,7 +48,7 @@ p {
 }
 
 .lock {
-  filter: grayscale(100%);
+  filter: grayscale(100%) opacity(25%);
 }
 
 .spacer {
@@ -90,4 +90,20 @@ p {
   box-shadow: 0 0 8px #2e7ef6;
   overflow: visible;
   cursor: pointer;
+}
+
+.profile-header {
+  text-align: center;
+  font-weight: 700;
+  color: #A4ABBA;
+}
+
+.award {
+  display: block;
+  margin: auto;
+  margin-bottom: 40px;
+}
+
+.profile-container {
+  margin-top: 30px;
 }

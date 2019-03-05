@@ -20,7 +20,7 @@
   href="https://cdn.jsdelivr.net/npm/plottable@3.7.0/plottable.css"
   />
 <div class="profile-wrapper">
-  <mat-grid-list cols="9" rowHeight="100px">
+  <mat-grid-list class="profile-container" cols="9" rowHeight="100px">
     <!-- PROFILE AVATAR -->
     <mat-grid-tile [colspan]="3" [rowspan]="6">
       <div class="grid-content">
@@ -33,7 +33,7 @@
 
           <div class="p-2 progress-container">
             <div class="p-2">
-              Progress Info 1
+              Daily Reading Goal
             </div>
             <div
               class="progress md-progress progress-base clickable"
@@ -51,14 +51,14 @@
                 35%
               </div>
             </div>
-            <div class="p-2">
+            <div class="p-2" style="margin-top:10px;">
               Current Bias
             </div>
             <div
               class="progress md-progress progress-base clickable"
               (click)="openProgressDialog()"
               style="width: 100%;height: 20px;overflow:
-              visible;margin-top:10px;">
+              visible;">
               <div
                 class="progress-bar progress glow"
                 role="progressbar"
@@ -70,14 +70,14 @@
                 55%
               </div>
             </div>
-            <div class="p-2">
+            <div class="p-2" style="margin-top:10px;">
               Progress Info 3
             </div>
             <div
               class="progress md-progress progress-base clickable"
               (click)="openProgressDialog()"
               style="width: 100%;height: 20px;overflow:
-              visible;margin-top:10px;">
+              visible;">
               <div
                 class="progress-bar progress glow"
                 role="progressbar"
@@ -127,14 +127,15 @@
     <mat-grid-tile [colspan]="1" [rowspan]="10">
       <div class="grid-content">
         <div class="d-flex flex-column no-pad justify-content-center">
-          <div class="p-2">
-            AWARDS <!-- TODO: STYLE HEADERS-->
+          <div class="p-2 profile-header">
+            Awards <!-- TODO: STYLE HEADERS-->
           </div>
           <div class="p-2">
             <a data-toggle="tooltip" title="Source Detective" placement='left'>
               <img
                 src="assets/bullseye.png"
-                class="rounded-circle t clickable"
+                style="margin-top: 10px"
+                class="rounded-circle t clickable award"
                 width="100px"
                 height="100px"
                 />
@@ -143,10 +144,10 @@
 
           </div>
           <div class="p-2">
-            <a data-toggle="tooltip" title="Source Detective" placement='left'>
+            <a data-toggle="tooltip" title="Leaderboard" placement='left'>
               <img
-                src="assets/time.png"
-                class="rounded-circle t clickable"
+                src="assets/leader.png"
+                class="rounded-circle t clickable award lock"
                 width="100px"
                 height="100px"
                 />
@@ -154,10 +155,10 @@
           </div>
           <!-- <p class="text-center award-descriptor">Daily User</p> -->
           <div class="p-2">
-            <a data-toggle="tooltip" title="Source Detective" placement='left'>
+            <a data-toggle="tooltip" title="" placement='left'>
               <img
-                src="assets/reader.png"
-                class="rounded-circle t clickable"
+                src="assets/torch.png"
+                class="rounded-circle t clickable award lock"
                 width="100px"
                 height="100px"
                 />
@@ -165,10 +166,10 @@
             <!-- <p class="text-center award-descriptor">Speed Reader</p> -->
           </div>
           <div class="p-2">
-            <a data-toggle="tooltip" title="Source Detective" placement='left'>
+            <a data-toggle="tooltip" title="Speed Reader" placement='left'>
               <img
-                src="assets/leader.png"
-                class="rounded-circle t clickable"
+                src="assets/time.png"
+                class="rounded-circle t clickable award"
                 width="100px"
                 height="100px"
                 />
@@ -176,50 +177,50 @@
             <!-- <p class="text-center award-descriptor">Fact Hero</p> -->
           </div>
           <div class="p-2">
-            <a data-toggle="tooltip" title="Source Detective" placement='left'>
+            <a data-toggle="tooltip" title="Daily User" placement='left'>
               <img
-                src="assets/torch.png"
-                class="rounded-circle t clickable"
+                src="assets/reader.png"
+                class="rounded-circle t clickable award"
                 width="100px"
                 height="100px"
                 /></a>
             <!-- <p class="text-center award-descriptor">Bias Expert</p> -->
           </div>
-          <div class="p-2">
-            <a data-toggle="tooltip" title="Source Detective" placement='left'>
-              <img
-                src="assets/bullseye.png"
-                class="rounded-circle t clickable lock"
-                width="100px"
-                height="100px"
-                />
-            </a>
-            <!-- <p class="award-descriptor">Source Detective</p> -->
+          <!--<div class="p-2">-->
+            <!--<a data-toggle="tooltip" title="Source Detective" placement='left'>-->
+              <!--<img-->
+                <!--src="assets/bullseye.png"-->
+                <!--class="rounded-circle t clickable lock award"-->
+                <!--width="100px"-->
+                <!--height="100px"-->
+                <!--/>-->
+            <!--</a>-->
+            <!--&lt;!&ndash; <p class="award-descriptor">Source Detective</p> &ndash;&gt;-->
 
-          </div>
-          <div class="p-2">
-            <a data-toggle="tooltip" title="Source Detective" placement='left'>
-              <img
-                src="assets/bullseye.png"
-                class="rounded-circle t clickable lock"
-                width="100px"
-                height="100px"
-                />
-            </a>
-            <!-- <p class="award-descriptor">Source Detective</p> -->
+          <!--</div>-->
+          <!--<div class="p-2">-->
+            <!--<a data-toggle="tooltip" title="Source Detective" placement='left'>-->
+              <!--<img-->
+                <!--src="assets/bullseye.png"-->
+                <!--class="rounded-circle t clickable lock award"-->
+                <!--width="100px"-->
+                <!--height="100px"-->
+                <!--/>-->
+            <!--</a>-->
+            <!--&lt;!&ndash; <p class="award-descriptor">Source Detective</p> &ndash;&gt;-->
 
-          </div>
-          <div class="p-2">
-            <a data-toggle="tooltip" title="Source Detective" placement='left'>
-              <img
-                src="assets/leader.png"
-                class="rounded-circle t clickable lock"
-                width="100px"
-                height="100px"
-                />
-            </a>
-            <!-- <p class="text-center award-descriptor">Fact Hero</p> -->
-          </div>
+          <!--</div>-->
+          <!--<div class="p-2">-->
+            <!--<a data-toggle="tooltip" title="Source Detective" placement='left'>-->
+              <!--<img-->
+                <!--src="assets/leader.png"-->
+                <!--class="rounded-circle t clickable lock award"-->
+                <!--width="100px"-->
+                <!--height="100px"-->
+                <!--/>-->
+            <!--</a>-->
+            <!--&lt;!&ndash; <p class="text-center award-descriptor">Fact Hero</p> &ndash;&gt;-->
+          <!--</div>-->
         </div>
 
       </div>
@@ -232,14 +233,14 @@
               HISTORY
             </p>
           </mat-grid-tile>
-          <mat-grid-tile [colspan]="1" [rowspan]="7">
-            Left OF CHART
-          </mat-grid-tile>
-          <mat-grid-tile [colspan]="5" [rowspan]="6">
+          <!--<mat-grid-tile [colspan]="1" [rowspan]="7">-->
+            <!--Left OF CHART-->
+          <!--</mat-grid-tile>-->
+          <mat-grid-tile [colspan]="6" [rowspan]="6">
             <chart></chart>
           </mat-grid-tile>
 
-          <mat-grid-tile [colspan]="5" [rowspan]="1">
+          <mat-grid-tile [colspan]="6" [rowspan]="1">
             <p style="color: #9e9e9e">
               Scale: +100% represents bias towards the Right, and -100%
               represents
