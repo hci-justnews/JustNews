@@ -1,0 +1,66 @@
+.profile-wrapper {
+    /* padding-left: 20%; */
+    padding-top: 45px;
+}
+
+.badge {
+    width: 64px;
+    height: 64px;
+}
+
+.hline {
+    width: 100%;
+    height: 2px;
+    background: #000000;
+    margin-top: 1%;
+    margin-bottom: 1%
+}
+
+.t {
+    background: transparent;
+}
+
+.spacer {
+  height: 20px;
+}
+
+.spacer2 {
+    margin: 1%;
+}
+
+.achievement {
+    width: 150px;
+}
+
+.profile-name {
+  font-weight: bold;
+  margin-top: 20px;
+  margin-bottom: 0;
+}
+
+.progress {
+   border-top-left-radius: 4px;
+   border-bottom-left-radius: 4px;
+ }
+
+.glow {
+  border-color: #2e7ef6;
+  box-shadow: 0 0 8px #2e7ef6;
+  overflow: visible;
+}
+
+.container {
+  margin-top: 80px;
+}
+
+.award-descriptor {
+  color: #3a3a3a;
+  margin-top: 10px;
+}
+
+.clickable:hover {
+  border-color: #2e7ef6;
+  box-shadow: 0 0 8px #2e7ef6;
+  overflow: visible;
+  cursor: pointer;
+}

@@ -1,0 +1,20 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+  rel="stylesheet">
+<nav id="navbar" class="navbar navbar-dark"*ngIf="show">
+  <div>
+    <button class="navbar-toggler" type="button" (click)="drawer.toggle()"
+      data-toggle="collapse" data-target="#navbarToggleExternalContent"
+      aria-controls="navbarToggleExternalContent" aria-expanded="false"
+      aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <!-- <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()">
+          <mat-icon aria-label="Side nav toggle icon">apps</mat-icon>
+    </button> -->
+    <div class="navbar-text white-icon margin-left app-title clickable"
+      (click)="goToLandingPage()">J u s t N e w s
+    </div>
+  </div>
+  <button class="profile-button" mat-fab (click)="goToProfilePage()">
+
+  </button>

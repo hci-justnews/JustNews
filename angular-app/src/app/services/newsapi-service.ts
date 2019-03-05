@@ -11,9 +11,14 @@ export class NewsApiService {
     api_key = '488fbf928009426ebd6abd22e4fb3fca';
     // hideNavbar: boolean = false;
     public showNavbar = new BehaviorSubject<boolean>(false); // {1} FALSE == HIDING
-
+    public showDrawer = new BehaviorSubject<boolean>(false);
     constructor(private http: HttpClient) { }
-
+    openDrawer() {
+        this.showDrawer.next(true);
+    }
+    closeDrawer() {
+        this.showDrawer.next(false);
+    }
     hideHeader() {
         this.showNavbar.next(false);
     }

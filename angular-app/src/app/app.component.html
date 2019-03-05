@@ -2,45 +2,35 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
   rel="stylesheet">
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <div class="main-wrapper">
   <div class="pos-f-t">
     <!-- <div class="collapse" id="navbarToggleExternalContent">
     </div> -->
-    <nav id="navbar" class="navbar navbar-dark bg-dark" *ngIf="show">
-      <div>
-        <button class="navbar-toggler" type="button" (click)="drawer.toggle()"
-          data-toggle="collapse" data-target="#navbarToggleExternalContent"
-          aria-controls="navbarToggleExternalContent" aria-expanded="false"
-          aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <!-- <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()">
-            <mat-icon aria-label="Side nav toggle icon">apps</mat-icon>
-      </button> -->
-        <div class="navbar-text white-icon margin-left clickable"
-          (click)="goToLandingPage()">Just News</div>
-      </div>
+    <navbar [drawer]="drawer" [show]="show"></navbar>
 
-      <button class="btn btn-default btn-circle" type="button"
-        (click)="drawer.toggle()">
-        <mat-icon class="white-icon">person</mat-icon>
-      </button>
-    </nav>
+
+    <!-- <button mat-fab>
+        <mat-icon aria-label="Example icon-button with a heart icon">person</mat-icon>
+      </button> -->
+    <!-- <a class="btn btn-info btn-lg btn-primary" (click)="drawer.toggle()"><mat-icon>person</mat-icon></a> -->
     <mat-sidenav-container class="navigation z-index-8">
       <mat-sidenav #drawer class="sidenav" fixedInViewport="false"
-        [opened]="show">
+        [opened]="true">
+
         <mat-nav-list>
           <div class="sidenav">
-            
+
             <div>
               <span class="small-cap">
                 <mat-icon>category</mat-icon>
                 Categories</span>
             </div>
-            <mat-list-item
-              (click)="getTopStories()">
-              <span>Top Stories</span>
+            <mat-list-item>
+              <button type="button" class="btn btn-primary w-100"
+                (click)="getTopStories()">Top Stories</button>
             </mat-list-item>
             <!-- <mat-list-item (click)="getWorldStories()">
               <span>World</span>
@@ -48,23 +38,37 @@
             <!-- <mat-list-item (click)="getTopStories()">
               <span>USA</span>
             </mat-list-item> -->
-            <mat-list-item (click)="getChicagoStories()">
+            <!-- <mat-list-item (click)="getChicagoStories()">
               <span>Chicago</span>
             </mat-list-item>
             <mat-list-item (click)="getTechStories()">
               <span>Technology</span>
-            </mat-list-item>
+            </mat-list-item> -->
             <mat-list-item (click)="addCategory()">
-              <button type="button" class="btn btn-outline-primary
-                waves-effect">Add Category</button>
+              <button type="button" class="w-100 btn btn-outline-primary
             </mat-list-item>
           </div>
           <div><span class="small-cap">
               <mat-icon matListIcon>settings</mat-icon>
               Settings</span></div>
-          <mat-list-item (click)="drawer.toggle()">
-            Mask Sources
+          <mat-list-item>
+            <div class="custom-control custom-switch">
+              <input type="checkbox" class="custom-control-input"
+                id="customSwitches">
+              <label class="custom-control-label" for="customSwitches">Mask
+                Sources</label>
+            </div>
           </mat-list-item>
+
+          <!-- <div>
+            <span class="small-cap">
+              <mat-icon matListIcon>people</mat-icon>
+              Users</span>
+          </div>
+          <mat-list-item *ngFor="let user of users.Users; let i=index">
+            <button type="button" class="w-100 btn btn-outline-primary
+              waves-effect" (click)="selectUser(i)">{{user.Name}}</button>
+          </mat-list-item> -->
         </mat-nav-list>
       </mat-sidenav>
       <mat-sidenav-content>
@@ -72,4 +76,8 @@
       </mat-sidenav-content>
     </mat-sidenav-container>
 
+  </div>
+
+  <div class="spacer">
+    s
   </div>

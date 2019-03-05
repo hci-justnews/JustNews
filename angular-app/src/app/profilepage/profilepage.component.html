@@ -1,0 +1,96 @@
+<link
+  href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.3/css/mdb.min.css"
+  rel="stylesheet">
+<link rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/plottable@3.7.0/plottable.css">
+<div class="profile-wrapper">
+  <div class="row d-flex justify-content-center">
+
+    <div class="col-6 align-center">
+      <div class="row d-flex justify-content-center w-100">
+        <div class="col " align="center">
+          <img [src]="image" class="rounded-circle t" width="300">
+          <h4 class="card-title m-t-10 text-center profile-name">{{name}}</h4>
+          <!--<h6 class="card-subtitle text-center">Age: {{age}}</h6>-->
+        </div>
+
+      </div>
+      <div class="row d-flex justify-content-center ">
+        <div class="progress md-progress progress-base clickable" (click)="openProgressDialog()"
+             style="width: 100%;height: 20px;margin:20px;overflow: visible">
+          <div class="progress-bar progress glow" role="progressbar" style="width: 35%;
+            height: 20px;overflow: visible" aria-valuenow="25" aria-valuemin="0"
+               aria-valuemax="100">35%
+          </div>
+        </div>
+      </div>
+      <div class="row d-flex justify-content-center container">
+        <h5 class="section-header"><u>Awards</u></h5>
+      </div>
+      <div class="row d-flex justify-content-center ">
+        <div class="d-inline-flex p-2">
+          <div class="d-col achievement" align="center" (click)="openAwardDialog()">
+            <img src="assets/reader.png" class="rounded-circle t clickable" width="100px" height="100px">
+            <p class="text-center award-descriptor">Speed Reader</p>
+          </div>
+        </div>
+        <div class="d-inline-flex p-2">
+          <div class="d-col achievement" align="center" (click)="openAwardDialog()">
+            <img src="assets/bullseye.png" class="rounded-circle t clickable" width="100px" height="100px">
+            <p class="text-center award-descriptor">Source Detective</p>
+          </div>
+        </div>
+        <div class="d-inline-flex p-2">
+          <div class="d-col achievement" align="center" (click)="openAwardDialog()">
+            <img src="assets/leader.png" class="rounded-circle t clickable" width="100px" height="100px">
+            <p class="text-center award-descriptor">Fact Hero</p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="d-flex justify-content-center">
+        <div class="d-inline-flex p-2">
+          <div class="d-col achievement" align="center" (click)="openAwardDialog()">
+            <img src="assets/torch.png" class="rounded-circle t clickable" width="100px" height="100px">
+            <p class="text-center award-descriptor">Bias Expert</p>
+          </div>
+        </div>
+        <div class="d-inline-flex p-2">
+          <div class="d-col achievement" align="center" (click)="openAwardDialog()">
+            <img src="assets/time.png" class="rounded-circle t clickable" width="100px" height="100px">
+            <p class="text-center award-descriptor">Daily User</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="row d-flex justify-content-center container">
+        <h5 class="section-header"><u>History</u></h5>
+      </div>
+
+      <div style="text-align: center">
+        <div style="display: inline-block">
+          <p style="text-align: justify">It looks like you did a pretty good job in terms of breaking out of your bubble! Your cumulative score
+            across all days is averaged to be 20% - which is much better than your historical performance. However,
+            there are a few things you can brush up on. During the weekend and start of the work week is where you tend
+            to focus more on reading from the right. This might be caused by feeling you are reading more for pleasure,
+            as opposed to reading something to stay up to date. Consider this for next week!</p>
+          <!--<img src="assets/day_graph.png" style="max-width: 45vw"/>-->
+          <chart></chart>
+          <p style="color: #9e9e9e">Scale: +100% represents bias towards the Right, and -100% represents bias towards the Left.</p>
+        </div>
+      </div>
+      <div class="row d-flex justify-content-center container">
+        <h5 class="section-header"><u>Leaderboard</u></h5>
+      </div>
+
+      <div class="d-flex justify-content-center">
+        <app-leaderboard></app-leaderboard>
+      </div>
+    </div>
+
+
+  </div>
+
+
+</div>
