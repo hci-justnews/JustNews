@@ -1,6 +1,8 @@
 .profile-wrapper {
   /* padding-left: 20%; */
   /* padding-top: 45px; */
+  margin-left:10px;
+  margin-right:10px;
 }
 
 .badge {
@@ -16,12 +18,37 @@
   margin-bottom: 1%
 }
 
+.no-pad {
+  padding: 0;
+}
+
 .t {
   background: transparent;
 }
 
-mat-grid-tile {
+p {
+  margin-bottom: 12px;
+}
+
+/* mat-grid-tile {
   background: lightblue;
+} */
+
+.progress-container {
+  margin: 10px;
+}
+
+.grid-content {
+  width: calc(100% - 10px);
+  height: calc(100% - 10px);
+}
+
+.small-pad {
+  padding: 20px;
+}
+
+.lock {
+  filter: grayscale(100%);
 }
 
 .spacer {
@@ -30,10 +57,6 @@ mat-grid-tile {
 
 .spacer2 {
   margin: 1%;
-}
-
-.achievement {
-  width: 150px;
 }
 
 .profile-name {

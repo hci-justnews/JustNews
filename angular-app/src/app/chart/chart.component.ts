@@ -2,7 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {
   ILineChartOptions,
   IChartistAnimationOptions,
-  IChartistData, IResponsiveOptionTuple
+  IChartistData, IResponsiveOptionTuple,
+  IBarChartOptions
 } from 'chartist';
 import {ChartEvent, ChartType, ResponsiveOptions} from 'ng-chartist';
 
@@ -36,13 +37,13 @@ export class ChartComponent implements OnInit {
         , {value: 75, className: 'high'}]
     ],
   };
-  options: ILineChartOptions = {
+  options: IBarChartOptions = {
 
     axisX: {
       showGrid: false,
     },
-    height: "300px",
-    width: "100%",
+    height: "290px",
+    width: "500px",
     high: 100,
     low: -100,
   };

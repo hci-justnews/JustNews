@@ -9,3 +9,6 @@
 .ct-series-a .ct-area, .ct-series-a .ct-slice-donut-solid, .ct-series-a .ct-slice-pie {
   fill: #00bcd4;
 }
+x-chartist{
+  width: 100%;
+}
