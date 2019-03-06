@@ -42,22 +42,51 @@
 }
 
 .mask {
-  color: darkblue!important;
+  color: #757577 !important;
+  background-color: #eaebee!important;
+}
+
+.mask:hover {
+  color: #757577 !important;
 }
 
 .reveal {
-  color: white;
+  background-color: #eaebee !important;
 }
 
-.source-badge:hover {
-  color: white!important;
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .16);
+.left {
+  color: #2e7ef6 !important;
+}
+
+.right {
+  color: #f97173 !important;
+}
+
+.neutral {
+  color: #757577 !important;
+}
+
+.left:hover {
+  color: #2e7ef6 !important;
+  box-shadow: 0 2px 5px 0 rgba(37, 102, 200, 0.33);
   cursor: pointer;
-  
+}
+
+.neutral:hover {
+  color: #757577 !important;
+  box-shadow: 0 2px 5px 0 rgba(161, 161, 164, 0.32);
+  cursor: pointer;
+}
+
+.right:hover {
+  color: #f97173 !important;
+  box-shadow: 0 2px 5px 0 rgba(177, 80, 82, 0.62);
+  cursor: pointer;
 }
 
 .source-date {
   margin: 0;
+  color: #757577!important;
 }
 
 .sub-info {
@@ -71,4 +100,5 @@
   position: relative;
   line-height: 1.4em;
   max-height: 2.8em;
+  color: #757577!important;
 }

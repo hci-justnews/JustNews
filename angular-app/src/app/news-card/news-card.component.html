@@ -14,14 +14,12 @@
       <!-- Text -->
       <div fxLayout="row" fxLayoutAlign="start center" class="sub-info">
         <!--Source-->
-        <span *ngIf="!maskAll || !maskThis" class="source-badge badge reveal
-          badge-primary">{{article.source}}</span>
-        <span *ngIf="maskAll && maskThis" class="source-badge badge badge-light
-          mask">Hidden</span>
+        <span id="sourceBadge" *ngIf="!maskAll || !maskThis" class="source-badge badge reveal badge-light {{article.bias}}">{{article.source}}</span>
+        <span *ngIf="maskAll && maskThis" class="source-badge badge badge-light mask">Hidden Source</span>
 
         <!-- Date -->
         <p class="source-date">
-          <small class="text-muted">Published:
+          <small>Published:
             {{getTimeString()}}
           </small>
         </p>

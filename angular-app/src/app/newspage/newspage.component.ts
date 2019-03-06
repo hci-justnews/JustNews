@@ -1,7 +1,15 @@
 import { Component, OnInit } from "@angular/core";
 
+declare module "*.json"
+{ const value: any;
+  export default value;
+}
+
 import { NewsApiService } from "../services/newsapi-service";
 import { ActivatedRoute } from "@angular/router";
+
+import * as bias from "../../assets/bias.json"
+
 export interface Article {
   author: string;
   title: string;
@@ -11,6 +19,7 @@ export interface Article {
   publishedAt: Date;
   content: string;
   source: string;
+  bias: string;
 }
 
 @Component({
@@ -76,6 +85,12 @@ export class NewspageComponent implements OnInit {
     });
   }
   createArticle(d: any) {
+    var bias_mode = "neutral";
+    if (bias["left"].includes(d["source"]["name"])) {
+      bias_mode = "left"
+    } else if (bias["right"].includes(d["source"]["name"])) {
+      bias_mode = "right"
+    }
     return {
       author: d["author"],
       title: d["title"],
@@ -84,7 +99,8 @@ export class NewspageComponent implements OnInit {
       image: d["urlToImage"],
       publishedAt: new Date(d["publishedAt"]),
       content: d["content"],
-      source: d["source"]["name"]
+      source: d["source"]["name"],
+      bias: bias_mode
     };
   }
   getArticles() {

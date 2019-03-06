@@ -17,6 +17,11 @@ export class NewsCardComponent implements OnInit {
 
   ngOnInit() {
     this.newsapi.mask.subscribe((value) => { this.maskAll = value;this.maskThis = value; this.checkMask();})
+
+    var badge = document.getElementById("sourceBadge")
+    console.log(badge)
+    // // badge.classList.add()
+    // badge.innerText = badge.innerText + "Left"
   }
 
   checkMask() {
@@ -62,6 +67,7 @@ export class NewsCardComponent implements OnInit {
   }
   removeMask(){
     this.maskThis = false;
+
   }
   addMask(){
     this.maskThis = true;
