@@ -6,7 +6,7 @@ import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
 @Injectable({
     providedIn: 'root'
 })
-export class NewsApiService {
+export class CurrentApiService {
 
     const headerDict = {
         'Authorization': 'kUb25qq4WLyrtDXxDEwSzkRtg9uf1CqfYIxGAZX6-2sjjjq4'
