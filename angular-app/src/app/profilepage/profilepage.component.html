@@ -1,7 +1,6 @@
-
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-  integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-  crossorigin="anonymous"></script>
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
 <script
   src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
   integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
@@ -13,81 +12,140 @@
 <link
   href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.3/css/mdb.min.css"
   rel="stylesheet"
-  />
+/>
 
 <link
   rel="stylesheet"
   href="https://cdn.jsdelivr.net/npm/plottable@3.7.0/plottable.css"
-  />
+/>
 <div class="profile-wrapper">
   <mat-grid-list class="profile-container" cols="9" rowHeight="100px">
     <!-- PROFILE AVATAR -->
-    <mat-grid-tile [colspan]="3" [rowspan]="6">
+    <mat-grid-tile [colspan]="3" [rowspan]="10">
       <div class="grid-content">
         <div class="d-flex flex-column no-pad justify-content-center">
           <div class="p-2" align="center">
-            <img [src]="image" class="rounded-circle t" width="300" />
+            <img [src]="image" class="rounded-circle t" width="300"/>
             <h4 class="card-title m-t-10 text-center profile-name">{{ name }}</h4>
           </div>
           <!--<h6 class="card-subtitle text-center">Age: {{age}}</h6>-->
 
           <div class="p-2 progress-container">
-            <div class="p-2">
-              Daily Reading Goal
+            <div class="p-2 progress-title">
+              Monthly Reading Time
             </div>
             <div
-              class="progress md-progress progress-base clickable"
+              class="progress md-progress progress-base"
               (click)="openProgressDialog()"
               style="width: 100%;height: 20px;overflow:
               visible;">
               <div
-                class="progress-bar progress glow"
+                class="progress-bar progress glow progress-highlight last-week"
                 role="progressbar"
-                style="width: 35%;
-                height: 20px;overflow: visible;"
-                aria-valuenow="35"
+                style="width: 25%; "
+                aria-valuenow="25"
                 aria-valuemin="0"
                 aria-valuemax="100">
-                35%
+                <a data-toggle="tooltip" title="Last Week" placement='bottom'>25%</a>
+              </div>
+
+              <div
+                class="progress-bar progress glow this-week"
+                role="progressbar"
+                style="width: 10%"
+                aria-valuenow="10"
+                aria-valuemin="0"
+                aria-valuemax="100">
+                <a data-toggle="tooltip" title="This Week" placement='bottom'>10%</a>
+              </div>
+              <div
+                class="progress-bar goal"
+                role="progressbar"
+                style="width: 65%;"
+                aria-valuenow="65"
+                aria-valuemin="0"
+                aria-valuemax="100">
+                <a data-toggle="tooltip" title="Monthly Goal" placement='bottom'>500 min. </a>
               </div>
             </div>
-            <div class="p-2" style="margin-top:10px;">
-              Current Bias
+            <div class="p-2 progress-title">
+              Monthly Number of Articles
             </div>
             <div
-              class="progress md-progress progress-base clickable"
+              class="progress md-progress progress-base"
               (click)="openProgressDialog()"
               style="width: 100%;height: 20px;overflow:
               visible;">
               <div
-                class="progress-bar progress glow"
+                class="progress-bar progress glow progress-highlight last-week"
                 role="progressbar"
-                style="width: 55%;
-                height: 20px;overflow: visible;"
-                aria-valuenow="55"
+                style="width: 7%; "
+                aria-valuenow="7"
                 aria-valuemin="0"
                 aria-valuemax="100">
-                55%
+                <a data-toggle="tooltip" title="Last Week" placement='bottom'>7%</a>
+              </div>
+
+              <div
+                class="progress-bar progress glow this-week"
+                role="progressbar"
+                style="width: 45%"
+                aria-valuenow="45"
+                aria-valuemin="0"
+                aria-valuemax="100">
+                <a data-toggle="tooltip" title="This Week" placement='bottom'>45%</a>
+              </div>
+              <div
+                class="progress-bar goal"
+                role="progressbar"
+                style="width: 48%;"
+                aria-valuenow="48"
+                aria-valuemin="0"
+                aria-valuemax="100">
+                <a data-toggle="tooltip" title="Monthly Goal" placement='bottom'>100 articles</a>
               </div>
             </div>
-            <div class="p-2" style="margin-top:10px;">
-              Progress Info 3
+            <div class="p-2 progress-title">
+              Monthly Newly Discovered Sources
             </div>
             <div
-              class="progress md-progress progress-base clickable"
+              class="progress md-progress progress-base"
               (click)="openProgressDialog()"
               style="width: 100%;height: 20px;overflow:
               visible;">
+
               <div
-                class="progress-bar progress glow"
+                class="progress-bar progress glow progress-highlight last-week"
                 role="progressbar"
-                style="width: 80%;
-                height: 20px;overflow: visible;"
-                aria-valuenow="80"
+                style="width: 25%; "
+                aria-valuenow="25"
                 aria-valuemin="0"
                 aria-valuemax="100">
-                80%
+                <a data-toggle="tooltip" title="Last Week" placement='bottom'>25%</a>
               </div>
+
+              <div
+                class="progress-bar progress glow this-week"
+                role="progressbar"
+                style="width: 25%"
+                aria-valuenow="25"
+                aria-valuemin="0"
+                aria-valuemax="100">
+                <a data-toggle="tooltip" title="This Week" placement='bottom'>25%</a>
+              </div>
+              <div
+                class="progress-bar goal"
+                role="progressbar"
+                style="width: 50%;"
+                aria-valuenow="50"
+                aria-valuemin="0"
+                aria-valuemax="100">
+                <a data-toggle="tooltip" title="Monthly Goal" placement='bottom'>4 new sources</a>
+              </div>
+            </div>
+            <div fxLayout="row" class="progress-legend" fxLayoutAlign="space-around center" >
+              <div fxLayout="row" fxLayoutAlign="center center" ><div class="legend-last-week"></div>Last Week</div>
+              <div fxLayout="row" fxLayoutAlign="center center" ><div class="legend-this-week"></div>This Week</div>
             </div>
           </div>
         </div>
@@ -138,7 +196,7 @@
                 class="rounded-circle t clickable award"
                 width="100px"
                 height="100px"
-                />
+              />
             </a>
             <!-- <p class="award-descriptor">Source Detective</p> -->
 
@@ -150,7 +208,7 @@
                 class="rounded-circle t clickable award lock"
                 width="100px"
                 height="100px"
-                />
+              />
             </a>
           </div>
           <!-- <p class="text-center award-descriptor">Daily User</p> -->
@@ -161,7 +219,7 @@
                 class="rounded-circle t clickable award lock"
                 width="100px"
                 height="100px"
-                />
+              />
             </a>
             <!-- <p class="text-center award-descriptor">Speed Reader</p> -->
           </div>
@@ -172,7 +230,7 @@
                 class="rounded-circle t clickable award"
                 width="100px"
                 height="100px"
-                />
+              />
             </a>
             <!-- <p class="text-center award-descriptor">Fact Hero</p> -->
           </div>
@@ -183,43 +241,43 @@
                 class="rounded-circle t clickable award"
                 width="100px"
                 height="100px"
-                /></a>
+              /></a>
             <!-- <p class="text-center award-descriptor">Bias Expert</p> -->
           </div>
           <!--<div class="p-2">-->
-            <!--<a data-toggle="tooltip" title="Source Detective" placement='left'>-->
-              <!--<img-->
-                <!--src="assets/bullseye.png"-->
-                <!--class="rounded-circle t clickable lock award"-->
-                <!--width="100px"-->
-                <!--height="100px"-->
-                <!--/>-->
-            <!--</a>-->
-            <!--&lt;!&ndash; <p class="award-descriptor">Source Detective</p> &ndash;&gt;-->
+          <!--<a data-toggle="tooltip" title="Source Detective" placement='left'>-->
+          <!--<img-->
+          <!--src="assets/bullseye.png"-->
+          <!--class="rounded-circle t clickable lock award"-->
+          <!--width="100px"-->
+          <!--height="100px"-->
+          <!--/>-->
+          <!--</a>-->
+          <!--&lt;!&ndash; <p class="award-descriptor">Source Detective</p> &ndash;&gt;-->
 
           <!--</div>-->
           <!--<div class="p-2">-->
-            <!--<a data-toggle="tooltip" title="Source Detective" placement='left'>-->
-              <!--<img-->
-                <!--src="assets/bullseye.png"-->
-                <!--class="rounded-circle t clickable lock award"-->
-                <!--width="100px"-->
-                <!--height="100px"-->
-                <!--/>-->
-            <!--</a>-->
-            <!--&lt;!&ndash; <p class="award-descriptor">Source Detective</p> &ndash;&gt;-->
+          <!--<a data-toggle="tooltip" title="Source Detective" placement='left'>-->
+          <!--<img-->
+          <!--src="assets/bullseye.png"-->
+          <!--class="rounded-circle t clickable lock award"-->
+          <!--width="100px"-->
+          <!--height="100px"-->
+          <!--/>-->
+          <!--</a>-->
+          <!--&lt;!&ndash; <p class="award-descriptor">Source Detective</p> &ndash;&gt;-->
 
           <!--</div>-->
           <!--<div class="p-2">-->
-            <!--<a data-toggle="tooltip" title="Source Detective" placement='left'>-->
-              <!--<img-->
-                <!--src="assets/leader.png"-->
-                <!--class="rounded-circle t clickable lock award"-->
-                <!--width="100px"-->
-                <!--height="100px"-->
-                <!--/>-->
-            <!--</a>-->
-            <!--&lt;!&ndash; <p class="text-center award-descriptor">Fact Hero</p> &ndash;&gt;-->
+          <!--<a data-toggle="tooltip" title="Source Detective" placement='left'>-->
+          <!--<img-->
+          <!--src="assets/leader.png"-->
+          <!--class="rounded-circle t clickable lock award"-->
+          <!--width="100px"-->
+          <!--height="100px"-->
+          <!--/>-->
+          <!--</a>-->
+          <!--&lt;!&ndash; <p class="text-center award-descriptor">Fact Hero</p> &ndash;&gt;-->
           <!--</div>-->
         </div>
 
@@ -234,7 +292,7 @@
             </p>
           </mat-grid-tile>
           <!--<mat-grid-tile [colspan]="1" [rowspan]="7">-->
-            <!--Left OF CHART-->
+          <!--Left OF CHART-->
           <!--</mat-grid-tile>-->
           <mat-grid-tile [colspan]="6" [rowspan]="6">
             <chart></chart>
@@ -255,13 +313,14 @@
       <div class="grid-content">
         <div class="d-flex flex-column no-pad justify-content-center">
           <app-leaderboard></app-leaderboard>
-        </div></div>
+        </div>
+      </div>
     </mat-grid-tile>
   </mat-grid-list>
 
 </div>
 <script>
-$(function() {
-      $('[data-toggle="tooltip"]').tooltip();
-    });
-    </script>
+  $(function () {
+    $('[data-toggle="tooltip"]').tooltip();
+  });
+</script>
