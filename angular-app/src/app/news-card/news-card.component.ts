@@ -10,10 +10,17 @@ import { Router } from '@angular/router';
 })
 export class NewsCardComponent implements OnInit {
   @Input() article: Article;
-
+  public maskAll: boolean;
+  public maskThis: boolean;
+  public maskCurrent: boolean  = true;
   constructor(private newsapi: NewsApiService, private router: Router) { }
 
   ngOnInit() {
+    this.newsapi.mask.subscribe((value) => { this.maskAll = value;this.maskThis = value; this.checkMask();})
+  }
+
+  checkMask() {
+    this.maskCurrent = this.maskAll && this.maskThis 
   }
 
   getTimeString() {
@@ -52,6 +59,15 @@ export class NewsCardComponent implements OnInit {
         source: this.article.source
       }
     })
-
+  }
+  removeMask(){
+    this.maskThis = false;
+  }
+  addMask(){
+    this.maskThis = true;
+  }
+  toggleMask() {
+    this.maskThis = !this.maskThis;
+    this.checkMask();
   }
 }
