@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Article } from '../newspage/newspage.component';
 import { NewsApiService } from '../services/newsapi-service';
 import { Router } from '@angular/router';
+import { ArticlepageComponent } from '../articlepage/articlepage.component';
 
 @Component({
   selector: 'news-card',
@@ -12,13 +13,13 @@ export class NewsCardComponent implements OnInit {
   @Input() article: Article;
   public maskAll: boolean;
   public maskThis: boolean;
-  public maskCurrent: boolean  = true;
+  public maskCurrent: boolean = true;
   public maskButton: string = "Mask"
   public collapse: boolean = false;
   constructor(private newsapi: NewsApiService, private router: Router) { }
 
   ngOnInit() {
-    this.newsapi.mask.subscribe((value) => { this.maskAll = value;this.maskThis = value; this.checkMask();})
+    this.newsapi.mask.subscribe((value) => { this.maskAll = value; this.maskThis = value; this.checkMask(); })
 
     var badge = document.getElementById("sourceBadge")
     console.log(badge)
@@ -54,7 +55,8 @@ export class NewsCardComponent implements OnInit {
 
     // console.log(this.news)
   }
-  printContent() {
+
+  goToArticle() {
     this.router.navigate(['/', 'article'], {
       queryParams: {
         author: this.article.author,
@@ -64,15 +66,16 @@ export class NewsCardComponent implements OnInit {
         image: this.article.image,
         publishedAt: this.article.publishedAt,
         content: this.article.content,
-        source: this.article.source
+        source: this.article.source,
+        bias: this.article.bias
       }
     })
   }
-  removeMask(){
+  removeMask() {
     this.maskThis = false;
 
   }
-  addMask(){
+  addMask() {
     this.maskThis = true;
   }
 
