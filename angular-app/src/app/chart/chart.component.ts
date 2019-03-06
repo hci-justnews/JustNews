@@ -43,7 +43,7 @@ export class ChartComponent implements OnInit {
       showGrid: false,
     },
     height: "290px",
-    width: "500px",
+    width: "100%",
     high: 100,
     low: -100,
   };
