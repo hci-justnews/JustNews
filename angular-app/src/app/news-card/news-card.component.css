@@ -107,7 +107,11 @@
   margin-left: -15px;
 }
 
-.mask-button:focus,.mask-button:active {
+.remove-outline:focus,.remove-outline:active {
   outline: none !important;
   box-shadow: none;
+}
+
+.collapse-expand {
+  color: #757575;
 }

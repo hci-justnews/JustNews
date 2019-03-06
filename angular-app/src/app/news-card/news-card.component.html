@@ -30,10 +30,13 @@
         white-text" (click)="removeMask()">Reveal Source</span>
       <span *ngIf="!maskAll || !maskThis" class="source-badge badge badge-dark
         white-text" (click)="addMask()">Mask Source</span> -->
-      <button mat-button class="mask-button" (click)="toggleMask()">{{maskButton}}</button>
-      <!--<mat-slide-toggle [color]="primary" [(ngModel)]="maskCurrent" (change)="toggleMask()">{{maskButton}}Mask Source</mat-slide-toggle>-->
-      <!--<a href="#" class="card-link">Mask</a>-->
-
+      <div fxLayout="row" fxLayoutAlign="space-between center" >
+        <button mat-button class="mask-button remove-outline" (click)="toggleMask()">{{maskButton}}</button>
+        <button mat-icon-button class="remove-outline" (click)="toggleCollapse()">
+          <mat-icon *ngIf="!collapse" class="collapse-expand" aria-label="Button to expand news card">keyboard_arrow_down</mat-icon>
+          <mat-icon *ngIf="collapse" class="collapse-expand" aria-label="Button to collapse news card">keyboard_arrow_up</mat-icon>
+        </button>
+      </div>
     </div>
   </div>
 </div>
