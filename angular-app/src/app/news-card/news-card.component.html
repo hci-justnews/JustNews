@@ -8,14 +8,14 @@
       image cap">
 
     <!-- Card content -->
-    <div fxFlex="65" class="card-body card-pad">
+    <div fxFlex="65" style="margin-left: 10px" class="card-body card-pad">
       <!-- Title -->
       <h5 class="source-title"><a>{{article.title}}</a></h5>
       <!-- Text -->
       <div fxLayout="row" fxLayoutAlign="start center" class="sub-info">
         <!--Source-->
-        <span id="sourceBadge" *ngIf="!maskAll || !maskThis" class="source-badge badge reveal badge-light {{article.bias}}">{{article.source}}</span>
-        <span *ngIf="maskAll && maskThis" class="source-badge badge badge-light mask">Hidden Source</span>
+        <span id="sourceBadge" *ngIf="!maskAll && !maskThis || maskAll && !maskThis" class="source-badge badge reveal badge-light {{article.bias}}">{{article.source}}</span>
+        <span *ngIf="maskAll && maskThis || !maskAll && maskThis" class="source-badge badge badge-light mask">Hidden Source</span>
 
         <!-- Date -->
         <p class="source-date">
@@ -30,7 +30,8 @@
         white-text" (click)="removeMask()">Reveal Source</span>
       <span *ngIf="!maskAll || !maskThis" class="source-badge badge badge-dark
         white-text" (click)="addMask()">Mask Source</span> -->
-      <mat-slide-toggle [color]="primary" [(ngModel)]="maskCurrent" (change)="toggleMask()">Mask Source</mat-slide-toggle>
+      <button mat-button class="mask-button" (click)="toggleMask()">{{maskButton}}</button>
+      <!--<mat-slide-toggle [color]="primary" [(ngModel)]="maskCurrent" (change)="toggleMask()">{{maskButton}}Mask Source</mat-slide-toggle>-->
       <!--<a href="#" class="card-link">Mask</a>-->
 
     </div>

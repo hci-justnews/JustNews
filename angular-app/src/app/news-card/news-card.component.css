@@ -10,7 +10,7 @@
 }
 
 .news-image {
-  max-height: 180px;
+  max-height: 190px;
   max-width: 250px;
   object-fit: cover;
   border-bottom-left-radius: 0.25rem;
@@ -68,7 +68,7 @@
 
 .left:hover {
   color: #2e7ef6 !important;
-  box-shadow: 0 2px 5px 0 rgba(37, 102, 200, 0.33);
+  box-shadow: 0 2px 5px 0 rgba(44, 122, 239, 0.24);
   cursor: pointer;
 }
 
@@ -80,7 +80,7 @@
 
 .right:hover {
   color: #f97173 !important;
-  box-shadow: 0 2px 5px 0 rgba(177, 80, 82, 0.62);
+  box-shadow: 0 2px 5px 0 rgba(247, 112, 115, 0.38);
   cursor: pointer;
 }
 
@@ -101,4 +101,13 @@
   line-height: 1.4em;
   max-height: 2.8em;
   color: #757577!important;
+}
+
+.mask-button {
+  margin-left: -15px;
+}
+
+.mask-button:focus,.mask-button:active {
+  outline: none !important;
+  box-shadow: none;
 }

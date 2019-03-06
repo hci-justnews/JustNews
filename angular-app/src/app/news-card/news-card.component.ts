@@ -13,6 +13,7 @@ export class NewsCardComponent implements OnInit {
   public maskAll: boolean;
   public maskThis: boolean;
   public maskCurrent: boolean  = true;
+  public maskButton: string = "Mask"
   constructor(private newsapi: NewsApiService, private router: Router) { }
 
   ngOnInit() {
@@ -25,7 +26,8 @@ export class NewsCardComponent implements OnInit {
   }
 
   checkMask() {
-    this.maskCurrent = this.maskAll && this.maskThis 
+    this.maskCurrent = this.maskAll && this.maskThis
+    this.maskButton = this.maskCurrent ? "Unmask Source" : "Mask Source"
   }
 
   getTimeString() {
@@ -72,6 +74,7 @@ export class NewsCardComponent implements OnInit {
   addMask(){
     this.maskThis = true;
   }
+
   toggleMask() {
     this.maskThis = !this.maskThis;
     this.checkMask();
