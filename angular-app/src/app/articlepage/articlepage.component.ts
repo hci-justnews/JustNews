@@ -1,12 +1,21 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { Article } from '../newspage/newspage.component';
+import {Component, Inject, OnInit} from '@angular/core';
+import {ActivatedRoute} from '@angular/router';
+import {Article} from '../newspage/newspage.component';
 import {NewsApiService} from "../services/newsapi-service";
+import {MAT_DIALOG_DATA, MatDialog, MatDialogRef} from "@angular/material/dialog";
+import {GameDialogComponent} from "./gamedialog.component";
+
+export interface DialogData {
+  bias: string;
+  source: string;
+}
+
 @Component({
   selector: 'article',
   templateUrl: './articlepage.component.html',
   styleUrls: ['./articlepage.component.css']
 })
+
 export class ArticlepageComponent implements OnInit {
   public article: Article;
   public descriptionFiller: string = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
@@ -15,7 +24,7 @@ export class ArticlepageComponent implements OnInit {
   public maskThis: boolean;
   public maskButton: string = "Mask Source";
 
-  constructor(private _route: ActivatedRoute,private newsapi: NewsApiService) {
+  constructor(private _route: ActivatedRoute, private newsapi: NewsApiService, public dialog: MatDialog) {
 
     this._route
       .queryParams
@@ -37,7 +46,10 @@ export class ArticlepageComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.newsapi.mask.subscribe((value) => { this.maskAll = value; this.maskThis = value; })
+    this.newsapi.mask.subscribe((value) => {
+      this.maskAll = value;
+      this.maskThis = value;
+    })
   }
 
   getTimeString() {
@@ -58,20 +70,19 @@ export class ArticlepageComponent implements OnInit {
   }
 
   toggleMask() {
-    this.maskThis = !this.maskThis
+    this.maskThis = !this.maskThis;
     this.maskButton = this.maskThis ? "Unmask Source" : "Mask Source"
   }
 
-  chooseLeft() {
+  buildDialog(bias, source) {
+    const dialogRef = this.dialog.open(GameDialogComponent, {
+      width: '250px',
+      data: {bias: bias, source: source}
+    });
 
-  }
-
-  chooseRight() {
-
-  }
-
-  chooseNeutral() {
-
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    });
   }
 
 }

@@ -40,12 +40,15 @@
         malesuada fames ac turpis egestas. Cras aliquet tempus ipsum, vel laoreet ex pharetra vitae. Lorem ipsum dolor
         sit amet, consectetur adipiscing elit.</p>
       <div fxLayout="row" fxLayoutAlign="space-evenly center" class="sub-info" style="margin-bottom: 100px">
-        <button mat-button class="mask-button remove-outline left-choice choice-button" (click)="chooseLeft()">Left
+        <button mat-button class="mask-button remove-outline left-choice choice-button"
+                (click)="buildDialog('left',article.bias)">Left
         </button>
-        <button mat-button class="mask-button remove-outline neutral-choice choice-button" (click)="chooseNeutral()">
+        <button mat-button class="mask-button remove-outline neutral-choice choice-button"
+                (click)="buildDialog('neutral',article.bias)">
           Neutral
         </button>
-        <button mat-button class="mask-button remove-outline right-choice choice-button" (click)="chooseRight()">Right
+        <button mat-button class="mask-button remove-outline right-choice choice-button"
+                (click)="buildDialog('right',article.bias)">Right
         </button>
       </div>
     </div>
