@@ -10,7 +10,10 @@
     <!-- Card content -->
     <div fxFlex="65" style="margin-left: 10px" class="card-body card-pad">
       <!-- Title -->
-      <h5 class="source-title"><a>{{article.title}}</a></h5>
+      <a data-toggle="tooltip" title="{{article.title}}" placement='left'>
+        <h5 class="source-title"><a>{{article.title}}</a></h5>
+      </a>
+
       <!-- Text -->
       <div fxLayout="row" fxLayoutAlign="start center" class="sub-info">
         <!--Source-->
