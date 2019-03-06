@@ -14,17 +14,12 @@ export class NewsCardComponent implements OnInit {
   public maskAll: boolean;
   public maskThis: boolean;
   public maskCurrent: boolean = true;
-  public maskButton: string = "Mask"
+  public maskButton: string = "Mask Source";
   public collapse: boolean = false;
   constructor(private newsapi: NewsApiService, private router: Router) { }
 
   ngOnInit() {
     this.newsapi.mask.subscribe((value) => { this.maskAll = value; this.maskThis = value; this.checkMask(); })
-
-    var badge = document.getElementById("sourceBadge")
-    console.log(badge)
-    // // badge.classList.add()
-    // badge.innerText = badge.innerText + "Left"
   }
 
   checkMask() {
@@ -67,7 +62,9 @@ export class NewsCardComponent implements OnInit {
         publishedAt: this.article.publishedAt,
         content: this.article.content,
         source: this.article.source,
-        bias: this.article.bias
+        bias: this.article.bias,
+        maskThis: this.maskThis,
+        maskAll: this.maskAll
       }
     })
   }

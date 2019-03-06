@@ -1,0 +1,88 @@
+.source-badge {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-right: 7px;
+  padding-left: 7px;
+  margin-right: 10px;
+  background-color: #E5E5E5;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  border-radius: 15px;
+}
+
+.mask {
+  color: #757577 !important;
+  background-color: #eaebee !important;
+}
+
+.mask:hover {
+  color: #757577 !important;
+}
+
+.reveal {
+  background-color: #eaebee !important;
+}
+
+.left {
+  color: #2e7ef6 !important;
+}
+
+.right {
+  color: #f97173 !important;
+}
+
+.neutral {
+  color: #757577 !important;
+}
+
+.left:hover {
+  color: #2e7ef6 !important;
+  box-shadow: 0 2px 5px 0 rgba(44, 122, 239, 0.24);
+  cursor: pointer;
+}
+
+.neutral:hover {
+  color: #757577 !important;
+  box-shadow: 0 2px 5px 0 rgba(161, 161, 164, 0.32);
+  cursor: pointer;
+}
+
+.right:hover {
+  color: #f97173 !important;
+  box-shadow: 0 2px 5px 0 rgba(247, 112, 115, 0.38);
+  cursor: pointer;
+}
+
+.source-date {
+  margin: 0;
+  color: #757577 !important;
+}
+
+.container {
+  margin-top: 50px;
+  width: 45vw;
+}
+
+.descriptor{
+  text-align: justify;
+  margin-top: 25px;
+  margin-bottom: 35px;
+}
+
+.sub-info {
+  margin-top: 12px;
+}
+
+.content {
+  margin-top: 35px;
+  margin-bottom: 35px;
+}
+
+.image-info {
+  color: #757577 !important;
+  margin-top: 12px;
+  margin-bottom: 0;
+  font-size: 12px;
+}

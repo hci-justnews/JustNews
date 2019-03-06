@@ -6,7 +6,7 @@
   crossorigin="anonymous">
 
 <nav id="navbar" class="navbar navbar-dark" *ngIf="show">
-  <div>
+  <div fxLayout="row" fxLayoutAlign="space-between center" style="height: 56px">
     <button class="navbar-toggler" type="button" (click)="drawer.toggle()"
       data-toggle="collapse" data-target="#navbarToggleExternalContent"
       aria-controls="navbarToggleExternalContent" aria-expanded="false"
@@ -20,6 +20,6 @@
       (click)="goToLandingPage()">J u s t N e w s
     </div>
   </div>
-  <button class="profile-button" mat-fab (click)="goToProfilePage()">
+  <button *ngIf="router.url !== '/profile'" class="profile-button" mat-fab (click)="goToProfilePage()">
 
   </button>

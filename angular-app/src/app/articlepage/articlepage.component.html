@@ -1,3 +1,29 @@
-<div>
-  ARTICLE
+<div class="article-container" fxLayout="row" fxLayoutAlign="center center">
+  <div fxLayout="column" fxLayoutAlign="center start" fxLayoutGap="10px" class="container">
+    <h2>{{article.title}}</h2>
+
+    <div fxLayout="row" fxLayoutAlign="start center" class="sub-info">
+      <!--Source-->
+      <span *ngIf="!maskAll && !maskThis || maskAll &&
+          !maskThis" class="source-badge badge reveal badge-light
+          {{article.bias}}">{{article.source}}</span>
+      <span *ngIf="maskAll && maskThis || !maskAll && maskThis" class="source-badge badge badge-light mask">Hidden Source</span>
+
+      <!-- Date -->
+      <p class="source-date">
+        <small>Published: {{getTimeString()}}</small>
+      </p>
+
+    </div>
+
+    <div fxLayout="column" fxLayoutAlign="center start">
+      <p class="descriptor">{{article.description}} {{descriptionFiller}}</p>
+      <img fxFlex style="width: 100%"
+           src="{{article.image}}" alt="Card
+      image cap">
+      <p class="image-info">Here will be an AI generated text that describes the image.</p>
+      <p class="content">{{article.content}}</p>
+
+    </div>
+  </div>
 </div>
