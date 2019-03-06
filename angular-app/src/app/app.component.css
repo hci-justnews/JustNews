@@ -78,25 +78,25 @@ html, body {
 }
 
 .small-cap {
-  margin: 20px 0 0px 20px;
+  margin: 20px 0 0 20px;
   display: flex;
   align-items: center;
   color: #9098ac;
 }
 
 .icon {
-  margin: 10px 0px 0px 0px;
+  margin: 10px 0 0 0;
   height: 48px;
 }
 
 .page-wrapper {
-  min-height: calc(100 vh-64px);
+  min-height: calc(100vh - 64px);
 }
 
 mat-sidenav-content {
   width: 100%;
   min-height: calc(100vh - 122px);
-  padding-left: 0px;
+  padding-left: 0;
 }
 
 mat-sidenav-content > * {

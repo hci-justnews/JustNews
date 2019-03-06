@@ -13,6 +13,7 @@ export class ArticlepageComponent implements OnInit {
 
   public maskAll: boolean;
   public maskThis: boolean;
+  public maskButton: string = "Mask Source";
 
   constructor(private _route: ActivatedRoute,private newsapi: NewsApiService) {
 
@@ -54,6 +55,23 @@ export class ArticlepageComponent implements OnInit {
       hour = hour % 12;
     }
     return hour + ":" + minString + tod + " " + (this.article.publishedAt.getMonth() + 1) + "/" + this.article.publishedAt.getDate() + "/" + this.article.publishedAt.getFullYear();
+  }
+
+  toggleMask() {
+    this.maskThis = !this.maskThis
+    this.maskButton = this.maskThis ? "Unmask Source" : "Mask Source"
+  }
+
+  chooseLeft() {
+
+  }
+
+  chooseRight() {
+
+  }
+
+  chooseNeutral() {
+
   }
 
 }
