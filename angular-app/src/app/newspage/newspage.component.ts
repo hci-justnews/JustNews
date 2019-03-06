@@ -1,22 +1,22 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
 
-import { NewsApiService } from '../services/newsapi-service';
-import { ActivatedRoute } from '@angular/router';
+import { NewsApiService } from "../services/newsapi-service";
+import { ActivatedRoute } from "@angular/router";
 export interface Article {
-  author: string,
-  title: string,
-  description: string,
-  url: string,
-  image: string,
-  publishedAt: Date,
-  content: string,
-  source: string
+  author: string;
+  title: string;
+  description: string;
+  url: string;
+  image: string;
+  publishedAt: Date;
+  content: string;
+  source: string;
 }
 
 @Component({
-  selector: 'newspage',
-  templateUrl: './newspage.component.html',
-  styleUrls: ['./newspage.component.css']
+  selector: "newspage",
+  templateUrl: "./newspage.component.html",
+  styleUrls: ["./newspage.component.css"]
 })
 export class NewspageComponent implements OnInit {
   newsapi: NewsApiService;
@@ -24,29 +24,27 @@ export class NewspageComponent implements OnInit {
   articles: Article[] = [];
   query: number = 0;
   search: string = "";
+  maskAll: boolean = false;
   constructor(private news: NewsApiService, private _route: ActivatedRoute) {
     this.newsapi = news;
-    this._route
-      .queryParams
-      .subscribe(params => {
-        console.log(params)
-        this.query = params['id'] || 0;
-        this.search = params['search'];
-        this.getQuery(params['id'], params['search']);
-      });
+    this._route.queryParams.subscribe(params => {
+      this.query = params["id"] || 0;
+      this.search = params["search"];
+      this.getQuery(params["id"], params["search"]);
+    });
   }
   async getQuery(id: any, search: any) {
     switch (id) {
       case "0": //TOP NEWS IN US
         this.newsapi.getHeadlinesInUS().subscribe(response => {
           this.data = response["articles"];
-          this.getArticles()
+          this.getArticles();
         });
         break;
       case "1": //TOP NEWS IN WORLD
         this.newsapi.getArticleByQuery("World News").subscribe(response => {
           this.data = response["articles"];
-          this.getArticles()
+          this.getArticles();
         });
         break;
       case "2": //TOP NEWS IN US
@@ -64,34 +62,35 @@ export class NewspageComponent implements OnInit {
         });
         break;
       default:
-        console.log("SEARCH QUERY")
+        console.log("SEARCH QUERY");
         this.newsapi.getArticleByQuery(search).subscribe(response => {
           this.data = response["articles"];
           this.getArticles();
         });
         break;
-
     }
-
   }
-  async ngOnInit() {
+  ngOnInit() {
+    this.newsapi.showNavbar.subscribe(value => {
+      this.maskAll = value;
+    });
   }
   createArticle(d: any) {
     return {
-      author: d['author'],
-      title: d['title'],
-      description: d['description'],
-      url: d['url'],
-      image: d['urlToImage'],
-      publishedAt: new Date(d['publishedAt']),
-      content: d['content'],
-      source: d['source']['name']
-    }
+      author: d["author"],
+      title: d["title"],
+      description: d["description"],
+      url: d["url"],
+      image: d["urlToImage"],
+      publishedAt: new Date(d["publishedAt"]),
+      content: d["content"],
+      source: d["source"]["name"]
+    };
   }
   getArticles() {
-    this.articles = []
+    this.articles = [];
     for (var i in this.data) {
-      var d = this.data[i]
+      var d = this.data[i];
       var a = this.createArticle(d);
       this.articles.push(a);
     }

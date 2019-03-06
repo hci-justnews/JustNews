@@ -17,6 +17,16 @@
   border-top-left-radius: 0.25rem;
 }
 
+.card-pad {
+  padding-right: 30px;
+  padding-left: 10px;
+  padding-bottom: 0px;
+}
+
+.white-text {
+  color: whitesmoke;
+}
+
 .source-badge {
   padding-top: 5px;
   padding-bottom: 5px;
@@ -24,7 +34,6 @@
   padding-left: 7px;
   margin-right: 10px;
   background-color: #E5E5E5;
-  color: #3a3a3a!important;
   box-shadow: none;
   -webkit-box-shadow: none;
   -webkit-border-radius: 15px;
@@ -32,11 +41,21 @@
   border-radius: 15px;
 }
 
-.source-badge:hover {
-  color: #2e7ef6!important;
-  box-shadow: 0 2px 5px 0 rgba(0,0,0,.16);
-  cursor: pointer;
+.mask {
+  color: darkblue!important;
 }
+
+.reveal {
+  color: white;
+}
+
+.source-badge:hover {
+  color: white!important;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .16);
+  cursor: pointer;
+  
+}
+
 .source-date {
   margin: 0;
 }
@@ -53,5 +72,3 @@
   line-height: 1.4em;
   max-height: 2.8em;
 }
-
-

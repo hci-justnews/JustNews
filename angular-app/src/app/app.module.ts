@@ -9,17 +9,17 @@ import {
   MatMenuModule,
   MatToolbarModule,
   MatGridListModule,
-  MatSlideToggleModule,
   MatCardModule,
   MatExpansionModule,
   MatIconModule,
   MatListModule,
   MatButtonModule,
   MatChipsModule,
+  MatCheckboxModule,
   MatFormFieldModule
 } from "@angular/material";
 import { FormsModule } from "@angular/forms";
-
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { SearchCardComponent } from "./search-card/search-card.component";
 import { NewsCardComponent } from "./news-card/news-card.component";
@@ -47,9 +47,11 @@ import { AwardDialogComponent } from './award-dialog/award-dialog.component';
     AwardDialogComponent
   ],
   imports: [
-    ChartistModule,
-    FormsModule,
     BrowserModule,
+    BrowserAnimationsModule,
+    ChartistModule,
+    MatCheckboxModule,
+    FormsModule,
     HttpClientModule,
     FlexLayoutModule,
     MatTooltipModule,
@@ -68,7 +70,6 @@ import { AwardDialogComponent } from './award-dialog/award-dialog.component';
     MatButtonModule,
     MatChipsModule,
 
-    BrowserAnimationsModule
   ],
   providers: [NewsApiService, UserService],
   bootstrap: [AppComponent]
