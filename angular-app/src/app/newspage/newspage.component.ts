@@ -1,14 +1,11 @@
 import { Component, OnInit } from "@angular/core";
 
-declare module "*.json"
-{ const value: any;
-  export default value;
-}
+
 
 import { NewsApiService } from "../services/newsapi-service";
 import { ActivatedRoute } from "@angular/router";
 
-import * as bias from "../../assets/bias.json"
+import * as bias from "./bias.json";
 
 export interface Article {
   author: string;

@@ -14,8 +14,11 @@
       <!-- Text -->
       <div fxLayout="row" fxLayoutAlign="start center" class="sub-info">
         <!--Source-->
-        <span id="sourceBadge" *ngIf="!maskAll && !maskThis || maskAll && !maskThis" class="source-badge badge reveal badge-light {{article.bias}}">{{article.source}}</span>
-        <span *ngIf="maskAll && maskThis || !maskAll && maskThis" class="source-badge badge badge-light mask">Hidden Source</span>
+        <span id="sourceBadge" *ngIf="!maskAll && !maskThis || maskAll &&
+          !maskThis" class="source-badge badge reveal badge-light
+          {{article.bias}}">{{article.source}}</span>
+        <span *ngIf="maskAll && maskThis || !maskAll && maskThis"
+          class="source-badge badge badge-light mask">Hidden Source</span>
 
         <!-- Date -->
         <p class="source-date">
@@ -30,12 +33,19 @@
         white-text" (click)="removeMask()">Reveal Source</span>
       <span *ngIf="!maskAll || !maskThis" class="source-badge badge badge-dark
         white-text" (click)="addMask()">Mask Source</span> -->
-      <div fxLayout="row" fxLayoutAlign="space-between center" >
-        <button mat-button class="mask-button remove-outline" (click)="toggleMask()">{{maskButton}}</button>
-        <button mat-icon-button class="remove-outline" (click)="toggleCollapse()">
-          <mat-icon *ngIf="!collapse" class="collapse-expand" aria-label="Button to expand news card">keyboard_arrow_down</mat-icon>
-          <mat-icon *ngIf="collapse" class="collapse-expand" aria-label="Button to collapse news card">keyboard_arrow_up</mat-icon>
-        </button>
+      <div fxLayout="row" fxLayoutAlign="space-between center">
+        <button mat-button class="mask-button remove-outline"
+          (click)="toggleMask()">{{maskButton}}</button>
+        <div>
+          <label></label>
+          <button mat-icon-button class="remove-outline"
+            (click)="goToArticle()">
+            Read
+            <mat-icon class="collapse-expand" aria-label="Button to expand news
+              card">keyboard_arrow_right</mat-icon>
+          </button>
+        </div>
+
       </div>
     </div>
   </div>

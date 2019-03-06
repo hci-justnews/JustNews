@@ -9,7 +9,7 @@ export interface Tile {
   text: string;
 }
 @Component({
-  selector: 'app-articlepage',
+  selector: 'article',
   templateUrl: './articlepage.component.html',
   styleUrls: ['./articlepage.component.css']
 })
@@ -35,7 +35,8 @@ export class ArticlepageComponent implements OnInit {
           source: params['source'],
           description: params['description'],
           url: params['url'],
-          image: params['image']
+          image: params['image'],
+          bias: params['bias']
         };
         
       });
