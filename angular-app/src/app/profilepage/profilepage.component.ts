@@ -1,8 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { UserService, User, Entry } from "../services/users-service";
-import * as $ from "jquery";
-
-import * as Plottable from "plottable";
+import * as d3 from 'd3';
 @Component({
   selector: "app-profilepage",
   templateUrl: "./profilepage.component.html",
