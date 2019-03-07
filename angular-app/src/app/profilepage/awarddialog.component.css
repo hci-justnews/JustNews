@@ -1,0 +1,10 @@
+.requirements {
+  text-align: start;
+  font-weight: 700;
+  color: #A4ABBA;
+  width: 100%;
+}
+
+.lock {
+  filter: grayscale(100%) opacity(25%);
+}

@@ -13,7 +13,7 @@
         <mat-icon aria-label="Example icon-button with a heart icon">person</mat-icon>
       </button> -->
     <!-- <a class="btn btn-info btn-lg btn-primary" (click)="drawer.toggle()"><mat-icon>person</mat-icon></a> -->
-    <mat-sidenav-container class="navigation z-index-8" [hasBackdrop]="False">
+    <mat-sidenav-container class="navigation z-index-8" [hasBackdrop]="false">
       <mat-sidenav
         #drawer
         class="sidenav"
@@ -65,7 +65,7 @@
               <b>Settings</b></span>
           </div>
           <mat-list-item>
-            <mat-slide-toggle [color]="primary"[(ngModel)]="maskAll" (change)="toggleMaskAll()">All Sources Masked</mat-slide-toggle>
+            <mat-slide-toggle [(ngModel)]="maskAll" (change)="toggleMaskAll()">All Sources Masked</mat-slide-toggle>
 
           </mat-list-item>
 

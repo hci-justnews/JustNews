@@ -3,14 +3,17 @@
 
   <div fxLayout="row">
     <!-- Card image -->
-    <img fxFlex class="news-image"
+    <img (click)="goToArticle()" fxFlex class="news-image"
       src="{{article.image}}" alt="Card
       image cap">
 
     <!-- Card content -->
     <div fxFlex="65" style="margin-left: 10px" class="card-body card-pad">
       <!-- Title -->
-      <h5 class="source-title"><a>{{article.title}}</a></h5>
+      <a data-toggle="tooltip" title="{{article.title}}" placement='left'>
+        <h5 (click)="goToArticle()" class="source-title"><a>{{article.title}}</a></h5>
+      </a>
+
       <!-- Text -->
       <div fxLayout="row" fxLayoutAlign="start center" class="sub-info">
         <!--Source-->
@@ -38,11 +41,9 @@
           (click)="toggleMask()">{{maskButton}}</button>
         <div>
           <label></label>
-          <button mat-icon-button class="remove-outline"
+          <button mat-button class="remove-outline"
             (click)="goToArticle()">
             Read
-            <mat-icon class="collapse-expand" aria-label="Button to expand news
-              card">keyboard_arrow_right</mat-icon>
           </button>
         </div>
 
