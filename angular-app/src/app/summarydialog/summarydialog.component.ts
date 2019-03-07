@@ -8,11 +8,11 @@ import { SummarizerService } from '../services/summarizer.service';
   styleUrls: ['./summarydialog.component.css']
 })
 export class SummarydialogComponent implements OnInit {
-  private loading = true;
-  private sentences: string[] = [];
+  public loading = true;
+  public sentences: string[] = [];
   constructor(
     public dialogRef: MatDialogRef<SummarydialogComponent>,
-    private summarizer: SummarizerService,
+    public summarizer: SummarizerService,
     @Inject(MAT_DIALOG_DATA) public data: any) {
     this.getSummary(data.url);
   }
