@@ -1,24 +1,28 @@
 <link rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.1/css/mdb.min.css"/>
 
-<div fxLayout="row" fxLayoutAlign="start center" style="margin-bottom: 20px">
-  <h1 mat-dialog-title style="text-align: start">Success {{data.award}} {{data.img}} {{data.achieved}}</h1>
-  <div style="width: 5px"></div>
-  <span class="source-badge badge reveal badge-light "></span>
-</div>
-<div mat-dialog-content>
-  <p style="text-align: justify">Way to go! It looks like you picked the write bias! This is an article
-    with bias. Therfore, this is a good sign, but continue to think
-    about why you made your selection, and your general thoughts on the topic.</p>
-  <p style="text-align: start">You earned <b>10 Boints</b></p>
-  <p style="text-align: justify">Ut-Oh! Looks like you didn’t get it right. This is an article with
-     bias. Think about what the article might have been trying to
-    communicate, and how you can do better next time.</p>
-  <p style="text-align: start">You earned <b>0 Boints</b></p>
-  <div fxLayout="row" fxLayoutAlign="start center" mat-dialog-actions>
-    <p>This article is from the <b>Side</b></p>
-  </div>
-</div>
-<div fxLayout="row" fxLayoutAlign="end center" mat-dialog-actions>
-  <button (click)="onNoClick()" mat-button class="remove-outline">Close</button>
+<div mat-dialog-content fxLayout="column" fxLayoutAlign="start center">
+  <img *ngIf="data.achieved"
+       src={{data.img}}
+       class="rounded-circle t clickable award"
+       width="100px"
+       height="100px"/>
+
+
+  <img *ngIf="!data.achieved"
+    src={{data.img}}
+    class="rounded-circle t clickable award lock"
+    width="100px"
+    height="100px"/>
+
+  <h1 mat-dialog-title style="text-align: center">{{data.award}}</h1>
+
+  <p class="requirements">Requirements:</p>
+  <p style="text-align: justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
+    ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+    fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+    anim id est laborum.</p>
+  <p *ngIf="data.achieved" style="width: 100%;text-align: start;color: #9e9e9e;">Earned on: October 15th 2018</p>
+  <p *ngIf="!data.achieved" style="width: 100%;text-align: start;color: #9e9e9e;">Not yet earned</p>
 </div>
