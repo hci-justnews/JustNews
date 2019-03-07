@@ -42,8 +42,12 @@
         <div>
           <label></label>
           <button mat-button class="remove-outline"
+            (click)="buildSummaryDialog()">
+            Brief Summary
+          </button>
+          <button mat-button class="remove-outline"
             (click)="goToArticle()">
-            Read
+            Full Article
           </button>
         </div>
 

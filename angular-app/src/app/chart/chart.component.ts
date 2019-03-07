@@ -47,7 +47,7 @@ export class ChartComponent implements OnInit {
   }
   buildChart() {
     this.chartProps = {};
-    var margin = { top: 20, right: 10, bottom: 40, left: 80 },
+    var margin = { top: 20, right: 10, bottom: 50, left: 80 },
       width = 650 - margin.left - margin.right,
       height = 400 - margin.top - margin.bottom;
     this.chartProps.x = d3.scaleLinear().range([0, width]);
@@ -80,7 +80,6 @@ export class ChartComponent implements OnInit {
 
     var tipMouseover = function (d) {
       var html = "HEY";
-      console.log(d3.event.pageX,d3.event.pageY)
       tooltip.html(html)
         .style("left", (d3.event.pageX + 15) + "px")
         .style("top", (d3.event.pageY - 28) + "px")
@@ -95,7 +94,6 @@ export class ChartComponent implements OnInit {
         .duration(300) // ms
         .style("opacity", 0); // don't care about position!
     };
-    console.log(height)
     svg.append("g")
       .attr("class", "x axis")
       .attr("transform", "translate(0," + (height / 2) + ")")

@@ -36,7 +36,8 @@ import {ChartComponent} from "./chart/chart.component";
 import {MatTooltipModule} from "@angular/material/tooltip";
 import {GameDialogComponent} from "./articlepage/gamedialog.component";
 import {AwardDialogComponent} from "./profilepage/awarddialog.component";
-
+import { SummarizerService } from './services/summarizer.service';
+import { SummarydialogComponent } from './summarydialog/summarydialog.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -47,7 +48,8 @@ import {AwardDialogComponent} from "./profilepage/awarddialog.component";
     LeaderboardComponent,
     ChartComponent,
     GameDialogComponent,
-    AwardDialogComponent
+    AwardDialogComponent,
+    SummarydialogComponent
   ],
   imports: [
     BrowserModule,
@@ -76,9 +78,10 @@ import {AwardDialogComponent} from "./profilepage/awarddialog.component";
   ],
   entryComponents:[
     GameDialogComponent,
-    AwardDialogComponent
+    AwardDialogComponent,
+    SummarydialogComponent
   ],
-  providers: [NewsApiService, UserService],
+  providers: [NewsApiService, UserService, SummarizerService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

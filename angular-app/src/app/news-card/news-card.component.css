@@ -69,19 +69,19 @@
 .left:hover {
   color: #2e7ef6 !important;
   box-shadow: 0 2px 5px 0 rgba(44, 122, 239, 0.24);
-  cursor: pointer;
+  cursor: default;
 }
 
 .neutral:hover {
   color: #757577 !important;
   box-shadow: 0 2px 5px 0 rgba(161, 161, 164, 0.32);
-  cursor: pointer;
+  cursor: default;
 }
 
 .right:hover {
   color: #f97173 !important;
   box-shadow: 0 2px 5px 0 rgba(247, 112, 115, 0.38);
-  cursor: pointer;
+  cursor: default;
 }
 
 .source-date {

@@ -72,6 +72,7 @@ export class NewspageComponent implements OnInit {
         console.log("SEARCH QUERY");
         this.newsapi.getArticleByQuery(search).subscribe(response => {
           this.data = response["articles"];
+          console.log(this.data)
           this.getArticles();
         });
         break;

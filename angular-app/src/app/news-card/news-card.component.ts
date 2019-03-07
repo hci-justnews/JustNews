@@ -3,6 +3,9 @@ import { Article } from '../newspage/newspage.component';
 import { NewsApiService } from '../services/newsapi-service';
 import { Router } from '@angular/router';
 import { ArticlepageComponent } from '../articlepage/articlepage.component';
+import { SummarizerService } from '../services/summarizer.service';
+import { MatDialog } from '@angular/material';
+import { SummarydialogComponent } from '../summarydialog/summarydialog.component';
 
 @Component({
   selector: 'news-card',
@@ -16,12 +19,23 @@ export class NewsCardComponent implements OnInit {
   public maskCurrent: boolean = true;
   public maskButton: string = "Mask Source";
   public collapse: boolean = false;
-  constructor(private newsapi: NewsApiService, private router: Router) { }
+  public summary = [];
+  constructor(private newsapi: NewsApiService, private router: Router, private summarizer: SummarizerService, private dialog: MatDialog) { }
 
   ngOnInit() {
     this.newsapi.mask.subscribe((value) => { this.maskAll = value; this.maskThis = value; this.checkMask(); })
+    // this.summarizer.getSummary(this.article.url).subscribe((value)=>console.log(value));
   }
-
+  buildSummaryDialog() {
+    const dialogRef = this.dialog.open(SummarydialogComponent, {
+      width: '600px',
+      minHeight: '600px',
+      data: { url: this.article.url, img: this.article.image, title: this.article.title }
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    });
+  }
   checkMask() {
     this.maskCurrent = this.maskAll && this.maskThis;
     this.maskButton = this.maskThis ? "Unmask Source" : "Mask Source"

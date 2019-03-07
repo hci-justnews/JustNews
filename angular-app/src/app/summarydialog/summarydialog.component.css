@@ -1,0 +1,35 @@
+.news-image {
+    max-height: 190px;
+    max-width: 250px;
+    object-fit: cover;
+    border-bottom-left-radius: 0.25rem;
+    border-top-left-radius: 0.25rem;
+}
+
+.summary {
+    text-align: center;
+    font-weight: 800;
+    color: #A4ABBA;
+    width: 100%;
+    
+}
+
+.scrollable {
+    overflow-y: scroll;
+}
+.mat-dialog-content{
+}
+
+
+html {}
+
+
+
+.but{
+    width:10%;
+    margin-left:45%;
+    margin-top:10px;
+}
+.clickable{
+    cursor: pointer;
+}

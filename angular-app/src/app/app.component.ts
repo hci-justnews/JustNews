@@ -30,9 +30,7 @@ export class AppComponent {
   ngOnInit() {
     this.newsapi.showDrawer.subscribe((value) => {if(this.drawer.opened != value){this.drawer.toggle();}})
     this.newsapi.showNavbar.subscribe((value) => { this.show = value; })
-    this.newsapi.mask.subscribe((value) => { this.maskAll = value;console.log(value) })
-
-
+    this.newsapi.mask.subscribe((value) => { this.maskAll = value;})
     this.goToLandingPage();
     // this.goToProfile()
     // this.users.loadUsers();
