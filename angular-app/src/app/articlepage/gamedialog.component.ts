@@ -10,6 +10,8 @@ import {DialogData} from "./articlepage.component";
 
 export class GameDialogComponent implements OnInit{
 
+  public success: boolean = true;
+
   ngOnInit(){
 
   }
@@ -17,6 +19,7 @@ export class GameDialogComponent implements OnInit{
   constructor(
     public dialogRef: MatDialogRef<GameDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: DialogData) {
+    this.success = data.guessed == data.bias
   }
 
   onNoClick(): void {

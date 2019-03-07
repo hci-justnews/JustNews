@@ -35,6 +35,7 @@ import {ChartistModule} from "ng-chartist";
 import {ChartComponent} from "./chart/chart.component";
 import {MatTooltipModule} from "@angular/material/tooltip";
 import {AwardDialogComponent} from './award-dialog/award-dialog.component';
+import {GameDialogComponent} from "./articlepage/gamedialog.component";
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import {AwardDialogComponent} from './award-dialog/award-dialog.component';
     NavbarComponent,
     LeaderboardComponent,
     ChartComponent,
-    AwardDialogComponent
+    AwardDialogComponent,
+    GameDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -71,6 +73,9 @@ import {AwardDialogComponent} from './award-dialog/award-dialog.component';
     MatButtonModule,
     MatChipsModule,
     MatDialogModule
+  ],
+  entryComponents:[
+    GameDialogComponent
   ],
   providers: [NewsApiService, UserService],
   bootstrap: [AppComponent]

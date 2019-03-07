@@ -6,6 +6,7 @@ import {MAT_DIALOG_DATA, MatDialog, MatDialogRef} from "@angular/material/dialog
 import {GameDialogComponent} from "./gamedialog.component";
 
 export interface DialogData {
+  guessed: string;
   bias: string;
   source: string;
 }
@@ -74,10 +75,10 @@ export class ArticlepageComponent implements OnInit {
     this.maskButton = this.maskThis ? "Unmask Source" : "Mask Source"
   }
 
-  buildDialog(bias, source) {
+  buildDialog(guessed, bias) {
     const dialogRef = this.dialog.open(GameDialogComponent, {
-      width: '250px',
-      data: {bias: bias, source: source}
+      width: '500px',
+      data: {guessed: guessed, bias: bias, source: this.article.source}
     });
 
     dialogRef.afterClosed().subscribe(result => {
