@@ -8,13 +8,9 @@ import {DialogData} from "./articlepage.component";
   templateUrl: './gamedialog.component.html',
 })
 
-export class GameDialogComponent implements OnInit{
+export class GameDialogComponent{
 
   public success: boolean = true;
-
-  ngOnInit(){
-
-  }
 
   constructor(
     public dialogRef: MatDialogRef<GameDialogComponent>,

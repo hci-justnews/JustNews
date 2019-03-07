@@ -115,3 +115,7 @@
 .collapse-expand {
   color: #757575;
 }
+
+.news-image:hover {
+  cursor: pointer;
+}

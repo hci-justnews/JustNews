@@ -127,10 +127,10 @@
 }
 
 .neutral-choice:hover {
-  background-color: rgb(242, 243, 246);
-  -webkit-box-shadow: 0 0 142px 31px rgba(242, 243, 246,1);
-  -moz-box-shadow: 0 0 142px 31px rgba(242, 243, 246,1);
-  box-shadow: 0 0 142px 31px rgba(242, 243, 246,1);
+  background-color: rgb(220, 221, 224);
+  -webkit-box-shadow: 0 0 142px 31px rgba(220, 221, 224,1);
+  -moz-box-shadow: 0 0 142px 31px rgba(220, 221, 224,1);
+  box-shadow: 0 0 142px 31px rgba(220, 221, 224,1);
 }
 
 .choice-button {

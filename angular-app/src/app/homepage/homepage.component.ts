@@ -33,22 +33,22 @@ export class HomepageComponent implements OnInit {
 
   }
   searchQuery() {
-    this.newsapi.openDrawer();
+    // this.newsapi.openDrawer();
     this.newsapi.showHeader();
     this.router.navigate(['/', 'newspage'], { queryParams: { search: this.search } })
   }
   searchCarnival() {
-    this.newsapi.openDrawer();
+    // this.newsapi.openDrawer();
     this.newsapi.showHeader();
     this.router.navigate(['/', 'newspage'], { queryParams: { search: "Carnival" } })
   }
   searchAlabama() {
-    this.newsapi.openDrawer();
+    // this.newsapi.openDrawer();
     this.newsapi.showHeader();
     this.router.navigate(['/', 'newspage'], { queryParams: { search: "Alabama Tornadoes" } })
   }
   searchTop() {
-    this.newsapi.openDrawer();
+    // this.newsapi.openDrawer();
     this.newsapi.showHeader();
     this.router.navigate(['/', 'newspage'], { queryParams: { id: 0 } });
 
