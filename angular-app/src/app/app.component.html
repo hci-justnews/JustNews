@@ -7,7 +7,7 @@
   <div class="pos-f-t">
     <!-- <div class="collapse" id="navbarToggleExternalContent">
     </div> -->
-    <navbar [drawer]="drawer" [show]="show"></navbar>
+    <navbar [drawer]="drawer"></navbar>
 
     <!-- <button mat-fab>
         <mat-icon aria-label="Example icon-button with a heart icon">person</mat-icon>
@@ -59,11 +59,11 @@
               <button type="button" class="btn add-button">Add Category</button>
             </mat-list-item>
           </div>
-          <div>
+          <!-- <div>
             <span class="small-cap">
               <mat-icon class="nav-headline" matListIcon>settings</mat-icon>
               <b>Settings</b></span>
-          </div>
+          </div> -->
           <mat-list-item>
             <mat-slide-toggle [(ngModel)]="maskAll" (change)="toggleMaskAll()">All Sources Masked</mat-slide-toggle>
 

@@ -24,7 +24,6 @@ export class NewsCardComponent implements OnInit {
 
   ngOnInit() {
     this.newsapi.mask.subscribe((value) => { this.maskAll = value; this.maskThis = value; this.checkMask(); })
-    // this.summarizer.getSummary(this.article.url).subscribe((value)=>console.log(value));
   }
   buildSummaryDialog() {
     const dialogRef = this.dialog.open(SummarydialogComponent, {
@@ -33,7 +32,6 @@ export class NewsCardComponent implements OnInit {
       data: { url: this.article.url, img: this.article.image, title: this.article.title }
     });
     dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
     });
   }
   checkMask() {
@@ -62,7 +60,6 @@ export class NewsCardComponent implements OnInit {
     this.newsapi.showHeader();
     this.router.navigate(['/', 'newspage'], { queryParams: { search: search } })
 
-    // console.log(this.news)
   }
 
   goToArticle() {

@@ -3,9 +3,16 @@
   />
 <div class="homepage-container">
   <div fxLayout="column" fxLayoutAlign="space-evenly center" fxLayoutGap="10px">
-    <search-card></search-card>
-    <div class="news-card" *ngFor="let article of articles">
-        <news-card [article]="article" ></news-card>
+    <div class="search" fxLayout="row" fxLayoutAlign="space-between end" fxLayoutGap="20px">
+      <search-card></search-card>
+      <div class="toggle">
+        <mat-slide-toggle class="toggle-label" [(ngModel)]="maskAll"
+          (change)="toggleMaskAll()">All
+          Sources Masked</mat-slide-toggle>
       </div>
+    </div>
+    <div class="news-card" *ngFor="let article of articles">
+      <news-card [article]="article"></news-card>
+    </div>
   </div>
 </div>

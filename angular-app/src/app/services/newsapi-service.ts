@@ -12,7 +12,7 @@ export class NewsApiService {
     // hideNavbar: boolean = false;
     public showNavbar = new BehaviorSubject<boolean>(false);
     public showDrawer = new BehaviorSubject<boolean>(false);
-    public mask = new BehaviorSubject<boolean>(false);
+    public mask = new BehaviorSubject<boolean>(true);
     constructor(private http: HttpClient) { }
     setMask(value: boolean) {
         this.mask.next(value);

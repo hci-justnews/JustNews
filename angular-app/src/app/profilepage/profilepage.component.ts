@@ -2,6 +2,7 @@
 import * as d3 from 'd3';
 import { Component, OnInit } from "@angular/core";
 import { UserService } from "../services/users-service";
+import {Location} from '@angular/common';
 
 import { AwardDialogComponent } from "./awarddialog.component";
 import { MatDialog } from "@angular/material";
@@ -35,7 +36,7 @@ export class ProfilepageComponent implements OnInit {
   public image: string = "assets/jessie.jpg";
   public data: number[] = [0.1, 0.023, -0.09, -0.17, -0.08, 0, 0.2];
 
-  constructor(private users: UserService, private dialog: MatDialog) {
+  constructor(private users: UserService, private dialog: MatDialog, private _location: Location) {
 
   }
 
@@ -53,8 +54,11 @@ export class ProfilepageComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
     });
+  }
+  back() {
+    this._location.back();
+
   }
 
 }

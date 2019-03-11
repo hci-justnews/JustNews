@@ -30,7 +30,6 @@ export class ChartComponent implements OnInit {
     for (var x in range(n)) {
     }
     this.currentWeek = currentWeek
-    console.log(currentWeek)
 
   }
   getX(min, max) // min and max included
@@ -59,7 +58,7 @@ export class ChartComponent implements OnInit {
       .x(function (d) {
         return _this.chartProps.x(d[0]);
       })
-      .y(function (d) { console.log(d); return _this.chartProps.y(d[1]) });
+      .y(function (d) { return _this.chartProps.y(d[1]) });
 
     var tooltip = d3.select(_this.chartElement.nativeElement).append("div")
       .attr("class", "tooltip")

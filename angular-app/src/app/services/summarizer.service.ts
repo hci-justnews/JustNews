@@ -12,6 +12,6 @@ export class SummarizerService {
     constructor(private http: HttpClient) { }
 
     getSummary(url) {
-        return this.http.get("http://api.intellexer.com/summarize?apikey=" + this.api_key + "&conceptsRestriction=10&&returnedTopicsCount=2&summaryRestriction=30&textStreamLength=2000&url=" + url)
+        return this.http.get("https://api.intellexer.com/summarize?apikey=" + this.api_key + "&conceptsRestriction=10&&returnedTopicsCount=2&summaryRestriction=30&textStreamLength=2000&url=" + url)
     }
 }

@@ -36,7 +36,7 @@
         white-text" (click)="removeMask()">Reveal Source</span>
       <span *ngIf="!maskAll || !maskThis" class="source-badge badge badge-dark
         white-text" (click)="addMask()">Mask Source</span> -->
-      <div fxLayout="row" fxLayoutAlign="space-between center">
+      <div class="card-action" fxLayout="row" fxLayoutAlign="space-between center">
         <button mat-button class="mask-button remove-outline"
           (click)="toggleMask()">{{maskButton}}</button>
         <div>

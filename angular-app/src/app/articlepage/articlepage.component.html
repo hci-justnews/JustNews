@@ -1,32 +1,39 @@
 <link rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.1/css/mdb.min.css"
-/>
-<div class="article-container" fxLayout="row" fxLayoutAlign="center center">
-  <div fxLayout="column" fxLayoutAlign="center start" fxLayoutGap="10px" class="container">
+  href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.1/css/mdb.min.css"
+  />
+<div class="article-container" fxLayout="row" fxLayoutAlign="center start">
+  <div fxLayout="column" fxLayoutAlign="center start" fxLayoutGap="10px"
+    class="container">
+    <div fxLayout="row" class="routing"fxLayoutAlign="space-between center">
+      <button mat-button class="mask-button remove-outline no-pad"
+        (click)="back()"><mat-icon>keyboard_arrow_left</mat-icon>Back</button>
+    </div>
     <h2 class="article-title">{{article.title}}</h2>
-
     <div fxLayout="row" fxLayoutAlign="space-between center" class="sub-info">
       <div fxLayout="row" fxLayoutAlign="start center">
         <!--Source-->
         <span *ngIf="!maskAll && !maskThis || maskAll &&
           !maskThis" class="source-badge badge reveal badge-light
           {{article.bias}}">{{article.source}}</span>
-        <span *ngIf="maskAll && maskThis || !maskAll && maskThis" class="source-badge badge badge-light mask">Hidden Source</span>
+        <span *ngIf="maskAll && maskThis || !maskAll && maskThis"
+          class="source-badge badge badge-light mask">Hidden Source</span>
 
         <!-- Date -->
         <p class="source-date">
           <small>Published: {{getTimeString()}}</small>
         </p>
       </div>
-      <button mat-button class="mask-button remove-outline" (click)="toggleMask()">{{maskButton}}</button>
+      <button mat-button class="mask-button remove-outline"
+        (click)="toggleMask()">{{maskButton}}</button>
     </div>
 
-    <div fxLayout="column" fxLayoutAlign="center start">
+    <div style="width: 756px" fxLayout="column" fxLayoutAlign="center center">
       <p class="descriptor">{{article.description}} {{descriptionFiller}}</p>
-      <img fxFlex style="width: 100%"
-           src="{{article.image}}" alt="Card
-      image cap">
-      <p class="image-info">Here will be an AI generated text that describes the image.</p>
+      <img fxFlex class="imaged"
+        src="{{article.image}}" alt="Card
+        image cap">
+      <!-- <p class="image-info">Here will be an AI generated text that describes the
+        image.</p> -->
       <p class="content">{{article.content}}</p>
 
       <p class="content">{{article.content}}</p>
@@ -34,19 +41,26 @@
       <p class="author"><i>Written by {{article.author}}</i></p>
       <div style="width: 50px; height:2px;background: #3a404d;display: block"></div>
       <h4 style="margin-top: 50px">Bias Game</h4>
-      <p class="game-explanation" style="text-align: justify; margin-bottom: 100px;">Tell us what you think about the bias of this article source! 
-        Does it feel like the article leans a certain political direction? Or do you feel it maintains a neutral viewpoint on the topic? 
-        Guessing the correct bias will give you Boints (bias points)! Boints will count towards your weekly progression and profile achievements!</p>
-      <div fxLayout="row" fxLayoutAlign="space-evenly center" class="sub-info" style="margin-bottom: 100px">
-        <button mat-button class="mask-button remove-outline left-choice choice-button"
-                (click)="buildDialog('left',article.bias)">Left
+      <p class="game-explanation" style="text-align: justify; margin-bottom:
+        100px;">Tell us what you think about the bias of this article source!
+        Does it feel like the article leans a certain political direction? Or do
+        you feel it maintains a neutral viewpoint on the topic?
+        Guessing the correct bias will give you Boints (bias points)! Boints
+        will count towards your weekly progression and profile achievements!</p>
+      <div fxLayout="row" fxLayoutAlign="space-evenly center" class="sub-info"
+        style="margin-bottom: 100px">
+        <button mat-button class="mask-button remove-outline left-choice
+          choice-button"
+          (click)="buildDialog('left',article.bias)">Left
         </button>
-        <button mat-button class="mask-button remove-outline neutral-choice choice-button"
-                (click)="buildDialog('neutral',article.bias)">
+        <button mat-button class="mask-button remove-outline neutral-choice
+          choice-button"
+          (click)="buildDialog('neutral',article.bias)">
           Neutral
         </button>
-        <button mat-button class="mask-button remove-outline right-choice choice-button"
-                (click)="buildDialog('right',article.bias)">Right
+        <button mat-button class="mask-button remove-outline right-choice
+          choice-button"
+          (click)="buildDialog('right',article.bias)">Right
         </button>
       </div>
     </div>

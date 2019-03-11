@@ -27,12 +27,10 @@ export class SummarydialogComponent implements OnInit {
     this.summarizer.getSummary(url).subscribe((value) => { _this.loadItems(value["items"]) }, (error) => { _this.loadTemplate() });
   }
   loadItems(items: any) {
-    console.log(items)
     for (var i in items) {
       if (items[i]["weight"] > 0.5)
         this.sentences.push(items[i]["text"]);
     }
-    console.log(this.sentences.length)
     this.loading = false;
   }
   loadTemplate() {

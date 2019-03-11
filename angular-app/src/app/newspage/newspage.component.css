@@ -1,0 +1,13 @@
+.toggle {
+    height: 42px;
+    padding-top: 10px;
+}
+
+.search {
+    width: 756px;
+}
+.toggle-label {
+    font-weight: 500;
+    font-size: 18px;
+    font-family: "Nunito Sans", sans-serif;
+}

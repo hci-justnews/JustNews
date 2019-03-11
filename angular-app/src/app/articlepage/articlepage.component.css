@@ -20,6 +20,9 @@
 .mask:hover {
   color: #757577 !important;
 }
+.imaged {
+  max-width: 756px;
+}
 
 .reveal {
   background-color: #eaebee !important;
@@ -54,12 +57,16 @@
   box-shadow: 0 2px 5px 0 rgba(247, 112, 115, 0.38);
   cursor: pointer;
 }
-
+.no-pad{
+  padding: 0px;
+}
 .source-date {
   margin: 0;
   color: #757577 !important;
 }
-
+.routing {
+  width: 45vw;
+}
 .container {
   margin-top: 50px;
   width: 45vw;

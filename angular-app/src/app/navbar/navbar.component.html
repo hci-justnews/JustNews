@@ -5,7 +5,7 @@
   integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
   crossorigin="anonymous">
 
-<nav id="navbar" class="navbar navbar-dark" *ngIf="show">
+<nav id="navbar" class="navbar navbar-dark">
   <div fxLayout="row" fxLayoutAlign="space-between center" style="height: 56px">
     <button style="border-color: transparent" class="navbar-toggler" type="button" (click)="drawer.toggle()"
       data-toggle="collapse" data-target="#navbarToggleExternalContent"
@@ -19,6 +19,5 @@
     </div>
   </div>
   <button *ngIf="router.url !== '/profile'" class="profile-button" mat-fab (click)="goToProfilePage()">
-
   </button>
 </nav>

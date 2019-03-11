@@ -1,28 +1,22 @@
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-<script
-  src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-  integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-  crossorigin="anonymous"></script>
-<script
-  src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-  integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-  crossorigin="anonymous"></script>
+
 <link
   href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.3/css/mdb.min.css"
   rel="stylesheet"
-/>
+  />
 
 <link
   rel="stylesheet"
   href="https://cdn.jsdelivr.net/npm/plottable@3.7.0/plottable.css"
-/>
+  />
 <div class="profile-wrapper">
   <mat-grid-list class="profile-container" cols="9" rowHeight="50px">
 
     <!-- SPACE -->
     <mat-grid-tile [colspan]="9" [rowspan]="1">
+      <div fxLayout="row" class="routing" fxLayoutAlign="start center">
+        <button mat-button class="mask-button remove-outline no-pad"
+          (click)="back()"><mat-icon>keyboard_arrow_left</mat-icon>Back</button>
+      </div>
     </mat-grid-tile>
 
     <!-- PROFILE AVATAR -->
@@ -30,7 +24,7 @@
       <div class="grid-content">
         <div class="d-flex flex-column no-pad justify-content-center">
           <div class="p-2" align="center">
-            <img [src]="image" class="rounded-circle t" width="300"/>
+            <img [src]="image" class="rounded-circle t" width="300" />
             <h5 class="card-title m-t-10 text-center profile-name">{{ name }}</h5>
           </div>
           <!--<h6 class="card-subtitle text-center">Age: {{age}}</h6>-->
@@ -47,19 +41,29 @@
           </div>
           <div class="p-2" style="text-align: center">
             <div style="display: inline-block">
-              <p style="text-align: justify; line-height: 1.9em">
-                <b style="color: #A4ABBA">Strengths:</b> It looks like you did a pretty good job in terms of breaking
-                out of your bubble! You already made very good progress in reaching your monthly goals for reading 100
-                different articles and exploring 4 new sources. Furthermore, it looks like that you are in a balanced
-                state from Tuesday to Friday which is very good. Finally, you earned the speed reader award this week
-                because you read 5 complete articles within 1 hour. Congrats on that!
+              <p style="text-align: justify; line-height: 1.8em">
+                <b style="color: #A4ABBA">Strengths:</b> It looks like you did a
+                pretty good job in terms of breaking
+                out of your bubble! You already made very good progress in
+                reaching your monthly goals for reading 100
+                different articles and exploring 4 new sources. Furthermore, it
+                looks like that you are in a balanced
+                state from Tuesday to Friday which is very good. Finally, you
+                earned the speed reader award this week
+                because you read 5 complete articles within 1 hour. Congrats on
+                that!
               </p>
-              <p style="text-align: justify; line-height: 1.9em">
-                <b style="color: #A4ABBA">Weaknesses:</b> Nonetheless, you may want to spend a little more time reading
-                articles since the month is half over. I addition, the weekly bias below shows that there are a few
-                things you can brush up on. During the weekend and start of the work week is where you tend to focus
-                more on reading from the right. This might be caused by feeling you are reading more for pleasure, as
-                opposed to reading something to stay up to date. Consider this for next week!
+              <p style="text-align: justify; line-height: 1.8em">
+                <b style="color: #A4ABBA">Weaknesses:</b> Nonetheless, you may
+                want to spend a little more time reading
+                articles since the month is half over. I addition, the weekly
+                bias below shows that there are a few
+                things you can brush up on. During the weekend and start of the
+                work week is where you tend to focus
+                more on reading from the right. This might be caused by feeling
+                you are reading more for pleasure, as
+                opposed to reading something to stay up to date. Consider this
+                for next week!
               </p>
             </div>
           </div>
@@ -76,54 +80,61 @@
           </div>
           <div class="p-2">
             <a data-toggle="tooltip" title="Source Detective" placement='left'>
-              <img (click)="buildAwardDialog('Source Detective','assets/bullseye.png',true)"
-                   src="assets/bullseye.png"
-                   class="rounded-circle t clickable award"
-                   width="100px"
-                   height="100px"
-              />
+              <img (click)="buildAwardDialog('Source
+                Detective','assets/bullseye.png',true)"
+                src="assets/bullseye.png"
+                class="rounded-circle t clickable award"
+                width="100px"
+                height="100px"
+                />
             </a>
           </div>
           <div class="p-2">
-            <a data-toggle="tooltip" title="Stay for one week on the first position of the leaderboard!"
-               placement='left'>
-              <img (click)="buildAwardDialog('Weeklong Leader','assets/leader.png',false)"
-                   src="assets/leader.png"
-                   class="rounded-circle t clickable award lock"
-                   width="100px"
-                   height="100px"
-              />
+            <a data-toggle="tooltip" title="Stay for one week on the first
+              position of the leaderboard!"
+              placement='left'>
+              <img (click)="buildAwardDialog('Weeklong
+                Leader','assets/leader.png',false)"
+                src="assets/leader.png"
+                class="rounded-circle t clickable award lock"
+                width="100px"
+                height="100px"
+                />
             </a>
           </div>
           <div class="p-2">
-            <a data-toggle="tooltip" title="Stay for one week in a mode of complete balance and unbiasedness!"
-               placement='left'>
-              <img (click)="buildAwardDialog('Balance Master','assets/torch.png',false)"
-                   src="assets/torch.png"
-                   class="rounded-circle t clickable award lock"
-                   width="100px"
-                   height="100px"
-              />
+            <a data-toggle="tooltip" title="Stay for one week in a mode of
+              complete balance and unbiasedness!"
+              placement='left'>
+              <img (click)="buildAwardDialog('Balance
+                Master','assets/torch.png',false)"
+                src="assets/torch.png"
+                class="rounded-circle t clickable award lock"
+                width="100px"
+                height="100px"
+                />
             </a>
           </div>
           <div class="p-2">
             <a data-toggle="tooltip" title="Speed Reader" placement='left'>
-              <img (click)="buildAwardDialog('Speed Reader','assets/time.png',true)"
-                   src="assets/time.png"
-                   class="rounded-circle t clickable award"
-                   width="100px"
-                   height="100px"
-              />
+              <img (click)="buildAwardDialog('Speed
+                Reader','assets/time.png',true)"
+                src="assets/time.png"
+                class="rounded-circle t clickable award"
+                width="100px"
+                height="100px"
+                />
             </a>
           </div>
           <div class="p-2">
             <a data-toggle="tooltip" title="Daily User" placement='left'>
-              <img (click)="buildAwardDialog('Daily User','assets/reader.png',true)"
-                   src="assets/reader.png"
-                   class="rounded-circle t clickable award"
-                   width="100px"
-                   height="100px"
-              /></a>
+              <img (click)="buildAwardDialog('Daily
+                User','assets/reader.png',true)"
+                src="assets/reader.png"
+                class="rounded-circle t clickable award"
+                width="100px"
+                height="100px"
+                /></a>
           </div>
         </div>
 
@@ -131,7 +142,7 @@
     </mat-grid-tile>
 
     <!-- SPACE -->
-    
+
 
     <!-- PROGRESS INFORMATION -->
     <mat-grid-tile [colspan]="3" [rowspan]="9">
@@ -152,8 +163,7 @@
               <div
                 class="progress-bar progress glow progress-highlight last-week"
                 role="progressbar"
-                style="width: 25%; "
-                aria-valuenow="25"
+                style="width: 25%;"aria-valuenow="25"
                 aria-valuemin="0"
                 aria-valuemax="100">
                 <a data-toggle="tooltip" title="Last Week" placement='bottom'>25%</a>
@@ -175,7 +185,8 @@
                 aria-valuenow="65"
                 aria-valuemin="0"
                 aria-valuemax="100">
-                <a data-toggle="tooltip" title="Monthly Goal" placement='bottom'>500 min. </a>
+                <a data-toggle="tooltip" title="Monthly Goal"
+                  placement='bottom'>500 min. </a>
               </div>
             </div>
             <div class="p-2 progress-title">
@@ -188,8 +199,7 @@
               <div
                 class="progress-bar progress glow progress-highlight last-week"
                 role="progressbar"
-                style="width: 7%; "
-                aria-valuenow="7"
+                style="width: 7%;"aria-valuenow="7"
                 aria-valuemin="0"
                 aria-valuemax="100">
                 <a data-toggle="tooltip" title="Last Week" placement='bottom'>7%</a>
@@ -211,7 +221,8 @@
                 aria-valuenow="48"
                 aria-valuemin="0"
                 aria-valuemax="100">
-                <a data-toggle="tooltip" title="Monthly Goal" placement='bottom'>100 articles</a>
+                <a data-toggle="tooltip" title="Monthly Goal"
+                  placement='bottom'>100 articles</a>
               </div>
             </div>
             <div class="p-2 progress-title">
@@ -225,8 +236,7 @@
               <div
                 class="progress-bar progress glow progress-highlight last-week"
                 role="progressbar"
-                style="width: 25%; "
-                aria-valuenow="25"
+                style="width: 25%;"aria-valuenow="25"
                 aria-valuemin="0"
                 aria-valuemax="100">
                 <a data-toggle="tooltip" title="Last Week" placement='bottom'>25%</a>
@@ -248,11 +258,14 @@
                 aria-valuenow="50"
                 aria-valuemin="0"
                 aria-valuemax="100">
-                <a data-toggle="tooltip" title="Monthly Goal" placement='bottom'>4 new sources</a>
+                <a data-toggle="tooltip" title="Monthly Goal"
+                  placement='bottom'>4 new sources</a>
               </div>
             </div>
-            <div fxLayout="row" class="progress-legend" fxLayoutAlign="start center">
-              <div fxLayout="row" fxLayoutAlign="center center" style="margin-right: 40px">
+            <div fxLayout="row" class="progress-legend" fxLayoutAlign="start
+              center">
+              <div fxLayout="row" fxLayoutAlign="center center"
+                style="margin-right: 40px">
                 <div class="legend-last-week"></div>
                 Last Week
               </div>
@@ -269,7 +282,8 @@
     <!-- CHART AREA -->
     <mat-grid-tile [colspan]="5" [rowspan]="9">
       <div class="grid-content" style="margin-left: 30px;margin-right: 30px">
-        <div class="p-2 profile-header" style="text-align: left;margin-bottom: 5px">
+        <div class="p-2 profile-header" style="text-align: left;margin-bottom:
+          5px">
           WEEKLY BIAS
         </div>
         <chart style="width: 100%;height: 90%;"></chart>

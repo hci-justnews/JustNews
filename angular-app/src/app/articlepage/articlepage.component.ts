@@ -4,6 +4,7 @@ import {Article} from '../newspage/newspage.component';
 import {NewsApiService} from "../services/newsapi-service";
 import {MAT_DIALOG_DATA, MatDialog, MatDialogRef} from "@angular/material/dialog";
 import {GameDialogComponent} from "./gamedialog.component";
+import {Location} from '@angular/common';
 
 export interface DialogData {
   guessed: string;
@@ -25,8 +26,7 @@ export class ArticlepageComponent implements OnInit {
   public maskThis: boolean;
   public maskButton: string = "Mask Source";
 
-  constructor(private _route: ActivatedRoute, private newsapi: NewsApiService, public dialog: MatDialog) {
-
+  constructor(private _route: ActivatedRoute, private newsapi: NewsApiService, public dialog: MatDialog,private _location: Location) {
     this._route
       .queryParams
       .subscribe(params => {
@@ -80,10 +80,12 @@ export class ArticlepageComponent implements OnInit {
       width: '500px',
       data: {guessed: guessed, bias: bias, source: this.article.source}
     });
-
     dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
     });
+  }
+  back(){
+    this._location.back();
+
   }
 
 }

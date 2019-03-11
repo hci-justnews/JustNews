@@ -12,12 +12,12 @@
     with {{data.bias}} bias. Therfore, this is a good sign, but continue to think
     about why you made your selection, and your general thoughts on the topic.</p>
   <p *ngIf="success" style="text-align: start">You earned <b>10 Boints</b></p>
-  <p *ngIf="!success" style="text-align: justify">I guess you pulled an entire bouquet of oopsie daisies! Looks like you didn’t get it correct. This is an article with
+  <p *ngIf="!success" style="text-align: justify">Uh Oh! Looks like you didn’t get it correct. This is an article with
     {{data.bias}} bias. Think about what the article might have been trying to
     communicate, and how you can do better next time.</p>
   <p *ngIf="!success" style="text-align: start">You earned <b>0 Boints</b></p>
   <div fxLayout="row" fxLayoutAlign="start center" mat-dialog-actions>
-    <p>This article is from the <b>{{data.bias}} Side</b></p>
+    <p>This article is from the <b>{{data.bias}}</b></p>
   </div>
 </div>
 <div

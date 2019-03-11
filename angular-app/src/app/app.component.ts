@@ -20,7 +20,6 @@ export class AppComponent {
   title = 'JustNews';
   @ViewChild('drawer') drawer: MatDrawer;
   public firstLoad: boolean = true;
-  public show: boolean = false;
   public maskAll: boolean = true;
   
   constructor(private router: Router, private newsapi: NewsApiService, private users: UserService, private ref: ChangeDetectorRef) {
@@ -29,7 +28,6 @@ export class AppComponent {
 
   ngOnInit() {
     this.newsapi.showDrawer.subscribe((value) => {if(this.drawer.opened != value){this.drawer.toggle();}})
-    this.newsapi.showNavbar.subscribe((value) => { this.show = value; })
     this.newsapi.mask.subscribe((value) => { this.maskAll = value;})
     this.goToLandingPage();
     // this.goToProfile()
@@ -72,7 +70,6 @@ export class AppComponent {
   }
 
   addCategory() {
-    console.log("HEY")
   }
 
 }

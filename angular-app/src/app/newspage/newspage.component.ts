@@ -1,8 +1,8 @@
-import {Component, OnInit} from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 
 
-import {NewsApiService} from "../services/newsapi-service";
-import {ActivatedRoute} from "@angular/router";
+import { NewsApiService } from "../services/newsapi-service";
+import { ActivatedRoute } from "@angular/router";
 
 import * as bias from "./bias.json";
 
@@ -29,7 +29,7 @@ export class NewspageComponent implements OnInit {
   articles: Article[] = [];
   query: number = 0;
   search: string = "";
-  maskAll: boolean = false;
+  maskAll: boolean = true;
 
   constructor(private news: NewsApiService, private _route: ActivatedRoute) {
     this.newsapi = news;
@@ -69,10 +69,8 @@ export class NewspageComponent implements OnInit {
         });
         break;
       default:
-        console.log("SEARCH QUERY");
         this.newsapi.getArticleByQuery(search).subscribe(response => {
           this.data = response["articles"];
-          console.log(this.data)
           this.getArticles();
         });
         break;
@@ -80,11 +78,13 @@ export class NewspageComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.newsapi.showNavbar.subscribe(value => {
+    this.newsapi.mask.subscribe(value => {
       this.maskAll = value;
     });
   }
-
+  toggleMaskAll() {
+    this.newsapi.setMask(this.maskAll);
+  }
   createArticle(d: any) {
     var bias_mode = "neutral";
     if (bias["left"].includes(d["source"]["name"])) {

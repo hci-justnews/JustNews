@@ -1,12 +1,14 @@
 .news-card {
   width: 45vw;
   margin: 20px;
+  height: 190px;
 }
 
 .source-title {
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  height:48px;
+  word-wrap: break-word;
   overflow: hidden;
+  margin-bottom: 0px;
 }
 
 .news-image {
@@ -21,6 +23,7 @@
   padding-right: 30px;
   padding-left: 10px;
   padding-bottom: 0px;
+  padding-top:10px;
 }
 
 .white-text {
@@ -88,18 +91,23 @@
   margin: 0;
   color: #757577!important;
 }
-
+.card-action {
+  height: 36px;
+}
 .sub-info {
-  margin-top: 12px;
-  margin-bottom: 12px;
+  height: 24px;
+  margin-top: 6px;
+  margin-bottom: 6px;
 }
 
 .source-description {
+  height: 66px;
+  margin-bottom: 0px;
   overflow: hidden;
   text-overflow: ellipsis;
   position: relative;
   line-height: 1.4em;
-  max-height: 2.8em;
+  max-height: 4em;
   color: #757577!important;
 }
 
