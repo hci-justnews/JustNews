@@ -14,7 +14,7 @@ export class NavbarComponent implements OnInit {
   @Input() drawer: MatDrawer;
   public image: string = "assets/jessie.jpg";
   // public user: User;
-  constructor(private newsapi: NewsApiService, private router: Router, private users: UserService) {
+  constructor(private newsapi: NewsApiService, public router: Router, private users: UserService) {
 
   }
   async ngOnInit() {
