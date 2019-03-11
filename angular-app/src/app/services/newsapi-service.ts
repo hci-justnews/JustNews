@@ -10,9 +10,14 @@ export class NewsApiService {
 
     api_key = '488fbf928009426ebd6abd22e4fb3fca';
     // hideNavbar: boolean = false;
-    public showNavbar = new BehaviorSubject<boolean>(false); // {1} FALSE == HIDING
+    public showNavbar = new BehaviorSubject<boolean>(false);
     public showDrawer = new BehaviorSubject<boolean>(false);
+    public mask = new BehaviorSubject<boolean>(false);
     constructor(private http: HttpClient) { }
+    setMask(value: boolean) {
+        this.mask.next(value);
+    }
+
     openDrawer() {
         this.showDrawer.next(true);
     }
@@ -20,7 +25,7 @@ export class NewsApiService {
         this.showDrawer.next(false);
     }
     hideHeader() {
-        this.showNavbar.next(false);
+        this.showNavbar.next(true);
     }
     showHeader() {
         this.showNavbar.next(true);
@@ -50,4 +55,5 @@ export class NewsApiService {
     getArticleByQuery(query: String) {
         return this.http.get('https://newsapi.org/v2/everything?q=' + query + '&apiKey=' + this.api_key)
     }
+    
 } 

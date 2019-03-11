@@ -1,0 +1,30 @@
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.1/css/mdb.min.css"/>
+
+<div fxLayout="row" fxLayoutAlign="start center" style="margin-bottom: 20px">
+  <h1 mat-dialog-title style="text-align: start" *ngIf="success">Success - </h1>
+  <h1 mat-dialog-title style="text-align: start" *ngIf="!success">Failure - </h1>
+  <div style="width: 5px"></div>
+  <span class="source-badge badge reveal badge-light {{data.bias}}">{{data.source}}</span>
+</div>
+<div mat-dialog-content>
+  <p *ngIf="success" style="text-align: justify">Way to go! It looks like you picked the correct bias! This is an article
+    with {{data.bias}} bias. Therfore, this is a good sign, but continue to think
+    about why you made your selection, and your general thoughts on the topic.</p>
+  <p *ngIf="success" style="text-align: start">You earned <b>10 Boints</b></p>
+  <p *ngIf="!success" style="text-align: justify">I guess you pulled an entire bouquet of oopsie daisies! Looks like you didn’t get it correct. This is an article with
+    {{data.bias}} bias. Think about what the article might have been trying to
+    communicate, and how you can do better next time.</p>
+  <p *ngIf="!success" style="text-align: start">You earned <b>0 Boints</b></p>
+  <div fxLayout="row" fxLayoutAlign="start center" mat-dialog-actions>
+    <p>This article is from the <b>{{data.bias}} Side</b></p>
+  </div>
+</div>
+<div
+  class="but badge badge-pill badge-primary clickable"
+  (click)="onNoClick()">Close
+</div>
+
+<!--<div fxLayout="row" fxLayoutAlign="end center" mat-dialog-actions>-->
+  <!--<button (click)="onNoClick()" mat-button class="remove-outline">Close</button>-->
+<!--</div>-->

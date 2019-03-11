@@ -1,83 +1,79 @@
-
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-  rel="stylesheet">
-<script
-  src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link
+  href="https://fonts.googleapis.com/icon?family=Material+Icons"
+  rel="stylesheet"
+  />
 <div class="main-wrapper">
   <div class="pos-f-t">
     <!-- <div class="collapse" id="navbarToggleExternalContent">
     </div> -->
     <navbar [drawer]="drawer" [show]="show"></navbar>
 
-
     <!-- <button mat-fab>
         <mat-icon aria-label="Example icon-button with a heart icon">person</mat-icon>
       </button> -->
     <!-- <a class="btn btn-info btn-lg btn-primary" (click)="drawer.toggle()"><mat-icon>person</mat-icon></a> -->
-    <mat-sidenav-container class="navigation z-index-8">
-      <mat-sidenav #drawer class="sidenav" fixedInViewport="false"
-        [opened]="true">
-
+    <mat-sidenav-container class="navigation z-index-8" [hasBackdrop]="false">
+      <mat-sidenav
+        #drawer
+        class="sidenav"
+        fixedInViewport="false"
+        [opened]="true"
+        style="background: white">
         <mat-nav-list>
           <div class="sidenav">
-
             <div>
               <span class="small-cap">
-                <mat-icon>category</mat-icon>
-                Categories</span>
+                <mat-icon class="nav-headline">category</mat-icon>
+                <b>Categories</b></span>
             </div>
             <mat-list-item>
-              <button type="button" class="btn btn-primary w-100"
-                (click)="getTopStories()">Top Stories</button>
+              <button type="button" class="btn topic-button"
+                (click)="getTopStories()">
+                Top Stories
+              </button>
             </mat-list-item>
-            <!-- <mat-list-item (click)="getWorldStories()">
-              <span>World</span>
-            </mat-list-item> -->
-            <!-- <mat-list-item (click)="getTopStories()">
-              <span>USA</span>
-            </mat-list-item> -->
-            <!-- <mat-list-item (click)="getChicagoStories()">
-              <span>Chicago</span>
-            </mat-list-item>
-            <mat-list-item (click)="getTechStories()">
-              <span>Technology</span>
-            </mat-list-item> -->
-            <mat-list-item (click)="addCategory()">
-              <button type="button" class="w-100 btn btn-outline-primary
-            </mat-list-item>
-          </div>
-          <div><span class="small-cap">
-              <mat-icon matListIcon>settings</mat-icon>
-              Settings</span></div>
-          <mat-list-item>
-            <div class="custom-control custom-switch">
-              <input type="checkbox" class="custom-control-input"
-                id="customSwitches">
-              <label class="custom-control-label" for="customSwitches">Mask
-                Sources</label>
-            </div>
-          </mat-list-item>
 
-          <!-- <div>
-            <span class="small-cap">
-              <mat-icon matListIcon>people</mat-icon>
-              Users</span>
+            <mat-list-item>
+              <button type="button" class="btn topic-button"
+                (click)="getWorldStories()">
+                World News
+              </button>
+            </mat-list-item>
+
+            <mat-list-item>
+              <button type="button" class="btn topic-button"
+                (click)="getChicagoStories()">
+                Chicago Politics
+              </button>
+            </mat-list-item>
+
+            <mat-list-item>
+              <button type="button" class="btn topic-button"
+                (click)="getTechStories()">
+                Technology
+              </button>
+            </mat-list-item>
+
+            <mat-list-item (click)="addCategory()">
+              <button type="button" class="btn add-button">Add Category</button>
+            </mat-list-item>
           </div>
-          <mat-list-item *ngFor="let user of users.Users; let i=index">
-            <button type="button" class="w-100 btn btn-outline-primary
-              waves-effect" (click)="selectUser(i)">{{user.Name}}</button>
-          </mat-list-item> -->
+          <div>
+            <span class="small-cap">
+              <mat-icon class="nav-headline" matListIcon>settings</mat-icon>
+              <b>Settings</b></span>
+          </div>
+          <mat-list-item>
+            <mat-slide-toggle [(ngModel)]="maskAll" (change)="toggleMaskAll()">All Sources Masked</mat-slide-toggle>
+
+          </mat-list-item>
         </mat-nav-list>
       </mat-sidenav>
       <mat-sidenav-content>
         <router-outlet></router-outlet>
       </mat-sidenav-content>
     </mat-sidenav-container>
-
   </div>
 
-  <div class="spacer">
-    s
-  </div>
+</div>

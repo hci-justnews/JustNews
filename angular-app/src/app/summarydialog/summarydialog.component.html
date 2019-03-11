@@ -1,0 +1,30 @@
+<link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.1/css/mdb.min.css"
+  />
+
+<div mat-dialog-content fxLayout="column" fxLayoutAlign="start center">
+  <img
+    src={{data.img}}
+    class="news-image"
+    fxFlex/>
+
+  <h1 mat-dialog-title fxFlex style="text-align: center">{{data.title}}</h1>
+
+  <p class="summary" fxFlex>Summary</p>
+  <div *ngIf="loading">
+    <div class="spinner-border text-primary" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+  </div>
+  <div *ngIf="!loading" class="scrollable">
+    <p style="text-align: justify" *ngFor="let item of sentences">
+      {{item}}
+    </p>
+  </div>
+
+</div>
+<div
+  *ngIf="!loading"
+  class="but badge badge-pill badge-primary clickable"
+  (click)="onNoClick()">Close
+</div>

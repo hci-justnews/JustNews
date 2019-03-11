@@ -20,3 +20,8 @@
     background:url("../../assets/jessie.jpg");
     background-size: contain;
 }
+
+.profile-button:focus,.profile-button:active {
+  outline: none !important;
+  box-shadow: none;
+}

@@ -1,20 +1,24 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
   rel="stylesheet">
-<nav id="navbar" class="navbar navbar-dark"*ngIf="show">
-  <div>
-    <button class="navbar-toggler" type="button" (click)="drawer.toggle()"
+<link rel="stylesheet"
+  href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+  integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+  crossorigin="anonymous">
+
+<nav id="navbar" class="navbar navbar-dark" *ngIf="show">
+  <div fxLayout="row" fxLayoutAlign="space-between center" style="height: 56px">
+    <button style="border-color: transparent" class="navbar-toggler" type="button" (click)="drawer.toggle()"
       data-toggle="collapse" data-target="#navbarToggleExternalContent"
       aria-controls="navbarToggleExternalContent" aria-expanded="false"
       aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
+      <!--<mat-icon>menu</mat-icon>-->
     </button>
-    <!-- <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()">
-          <mat-icon aria-label="Side nav toggle icon">apps</mat-icon>
-    </button> -->
     <div class="navbar-text white-icon margin-left app-title clickable"
       (click)="goToLandingPage()">J u s t N e w s
     </div>
   </div>
-  <button class="profile-button" mat-fab (click)="goToProfilePage()">
+  <button *ngIf="router.url !== '/profile'" class="profile-button" mat-fab (click)="goToProfilePage()">
 
   </button>
+</nav>

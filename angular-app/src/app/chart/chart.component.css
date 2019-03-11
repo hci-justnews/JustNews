@@ -1,11 +1,12 @@
-.ct-bar {
-  fill: yellow;
-}
-
-.ct-series-a .ct-bar, .ct-series-a .ct-line, .ct-series-a .ct-point, .ct-series-a .ct-slice-donut {
-  stroke: green;
-}
-
-.ct-series-a .ct-area, .ct-series-a .ct-slice-donut-solid, .ct-series-a .ct-slice-pie {
-  fill: #00bcd4;
+div.tooltip {	
+  position: absolute;			
+  text-align: center;			
+  width: 60px;					
+  height: 28px;					
+  padding: 2px;				
+  font: 12px sans-serif;		
+  background: red;	
+  border: 0px;		
+  border-radius: 8px;			
+  pointer-events: none;			
 }
