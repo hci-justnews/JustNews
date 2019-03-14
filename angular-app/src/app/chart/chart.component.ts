@@ -104,7 +104,7 @@ export class ChartComponent implements OnInit {
 
     svg.append("path")
       .attr("class", "line line1")
-      .style('stroke', '#6da3f6')
+      .style('stroke', '#8647f6')
       .style("stroke-width", 3)
       .style('fill', 'none')
       .style("stroke-linejoin", "round")
@@ -113,7 +113,7 @@ export class ChartComponent implements OnInit {
       .data(_this.currentWeek)
       .enter().append("circle")
       .attr("r", 6)
-      .style("fill", "#6da3f6")
+      .style("fill", "#8647f6")
 
       .attr("cx", function (d) { return _this.chartProps.x(d[0]); })
       .attr("cy", function (d) { return _this.chartProps.y(d[1]); })
